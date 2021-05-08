@@ -5,6 +5,7 @@ let files_counter = document.getElementById("total_files");
 get_storage()
 get_files()
 check_user_logged()
+login()
 
 /** get users storage info */
 function get_storage() {
@@ -19,7 +20,15 @@ function get_files() {
 
 
 
-function login
+function login() {
+	payload = {
+		"username": "Primus",
+		"password": "Secondus"
+	};
+	postData('https://api.uploadr.club/api/v1/session/create', payload).then(data => {
+		console.log(data);
+	});
+}
 
 
 function check_user_logged() {
@@ -29,9 +38,9 @@ function check_user_logged() {
 		"user_uuid": "e-e-e-e-e"
 	}
 	postData('https://api.uploadr.club/api/v1/session/check', placeholder)
-	.then(data => {
-		console.log(data)
-	})
+		.then(data = () => {
+			console.log(data)
+		})
 }
 
 
@@ -43,13 +52,14 @@ async function postData(url = '', data = {}) {
 	const response = await fetch(url, {
 		method: 'POST',
 		cache: 'no-cache',
+		mode: 'no-cors',
 		headers: {
-		'Content-Type': 'application/json'
+			'Content-Type': 'application/json'
 		},
 		body: JSON.stringify(data)
 	});
 	return response.json();
-  }
+}
 
 
 
