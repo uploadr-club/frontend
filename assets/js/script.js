@@ -30,3 +30,45 @@ window.addEventListener("load", () => {
 			}, 1e3, "easeInOutExpo"), t.preventDefault()
 		}))
 	}(jQuery);
+
+function reqHandler() {
+	let req = fetch("https://api.uploadr.club/api/v1/session/check", {
+		method: "POST",
+		body: JSON.stringify({
+			token: localStorage.getItem("token")
+		})
+	})
+	if (req.ok) {
+		return req;
+	} else {
+		return req;
+	}
+}
+
+function checkIfLoggedIn() {
+	let exp_ts = localStorage.getItem("expire_timestamp");  // expiry timestamp
+	let c_ts = Math.round(new Date() / 1000);  // current timestamp
+	if (exp_ts < c_ts) {
+		if (window.location.pathname !== "/login.html") {
+			window.location = "/login.html"
+			return false;
+		}
+	} else {
+		reqHandler().then(req => {
+			if (!req.ok) {
+				if (window.location.pathname !== "/login.html") {
+					window.location = "/login.html"
+					return false;
+				}
+			} else {
+				if (window.location.pathname === "/login.html") {
+					window.location = "/dash.html"
+				}
+				return true;
+			}
+		})
+	}
+
+}
+
+checkIfLoggedIn()

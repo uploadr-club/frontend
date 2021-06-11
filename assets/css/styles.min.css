@@ -33,3 +33,8 @@
 [data-hidden=yes] .activity-item{
     display: none;!important;
 }
+
+.activA {
+    color: #2c9faf;
+    cursor: pointer
+}

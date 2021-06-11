@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css?h=a436bee1e5ae414f98db7ca13adfd7c0">
     <link rel="stylesheet" href="assets/css/styles.min.css?h=bb2db7521508fc7db3f11e7c02094a4a">
-    {% include "base/web_panel.html" %}
+    <script src="./assets/js/login.js"></script>
 </head>
 
 <body class="bg-gradient-primary">
@@ -27,21 +27,16 @@
                                     <div class="text-center">
                                         <h4 class="text-dark mb-4">Welcome Back!</h4>
                                     </div>
-                                    <form class="user" method="post">
+                                    <form name="loginForm" id="formHandler" class="user" onsubmit="return false">
                                         <div class="form-group"><label for="usernameInput">Username</label><input class="form-control form-control-user" type="text" id="usernameInput"
                                                                                                                   aria-describedby="usernameHelp" placeholder="Enter Username..." name="username"></div>
                                         <div class="form-group"><label for="passwordInput">Password</label><input class="form-control form-control-user" type="password" id="passwordInput"
                                                                                                                   placeholder="Password" name="password"></div>
-                                        {% if is_error %}
-                                            <p style="color: red;"> Wrong username or password.</p>
-                                        {% endif %}
-                                        {% if is_logged_out %}
-                                            <p style="color: red;"> You have been logged out!</p>
-                                        {% endif %}
-                                        <p style="color: orange;"><a style="color: orange;" href="/register">Don't have an account yet? Click HERE to Register!</a></p>
+                                        <p hidden style="color: red;">{{ errorTemplate }}</p>
+<!--                                        <p style="color: orange;"><a style="color: orange;" href="/register.html">Don't have an account yet? Click HERE to Register!</a></p>-->
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small"></div>
-                                        </div><button class="btn btn-primary btn-block text-white btn-user" type="submit">Login</button>
+                                        </div><button class="btn btn-primary btn-block text-white btn-user" type="submit" onclick="validateLogin()">Login</button>
                                         <hr>
                                     </form>
                                 </div>
@@ -55,7 +50,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
-    <script src="assets/js/script.min.js?h=1e4be2044492a6ec5dc404d03b20a15b"></script>
+    <script src="assets/js/script.js?h=1e4be2044492a6ec5dc404d03b20a15b"></script>
 </body>
 
 </html>
