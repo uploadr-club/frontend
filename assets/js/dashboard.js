@@ -54,10 +54,10 @@ function loadData() {
                 elem.innerText = "Discord already linked";
                 elem.disabled = true;
                 // noinspection JSUnresolvedVariable
-                $("#usernameDropDown")[0].innerHTML = `<img style="border-radius: 50%;" alt="Profile Picture" width="45" src="https://cdn.discordapp.com/avatars/${data.discord.discord_data.user.id}/${data.discord.discord_data.user.avatar}.png?size=256">  ${data.user.username}`;
+                // $("#usernameDropDown")[0].innerHTML = `<img style="border-radius: 50%;" alt="Profile Picture" width="45" src="https://cdn.discordapp.com/avatars/${data.discord.discord_data.user.id}/${data.discord.discord_data.user.avatar}.png?size=256">  ${data.user.username}`;
             } else {
                 $("#dLinkButton")[0].disabled = false;
-                $("#usernameDropDown")[0].innerHTML = data.user.username;
+                // $("#usernameDropDown")[0].innerHTML = data.user.username;
             }
         }
     })

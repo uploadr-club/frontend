@@ -72,3 +72,114 @@ function checkIfLoggedIn() {
 }
 
 checkIfLoggedIn()
+
+const dashboard_urls = [
+	"/dash.html",
+	"/profile.html",
+	// "files.html",
+	// "auditlog.html"
+];
+
+function dashAccordian() {
+	let dashboard_names = [
+		{
+			name: "Dashboard",
+			className: "fas fa-tachometer-alt"
+		},
+		{
+			name: "Profile",
+			className: "fas fa-user"
+		},
+	]
+	if (dashboard_urls.indexOf(window.location.pathname) > -1) {
+		let accordian = document.getElementById("accordionSidebar");
+		for (let page in dashboard_urls) {
+			let main_node = document.createElement("li");
+			main_node.className = "nav-item";
+			let linkNode = document.createElement("a");
+			linkNode.href = dashboard_urls[page];
+			linkNode.className = `nav-link${dashboard_urls[page] === window.location.pathname ? ' active' : ''}`;
+			let iconNode = document.createElement("i");
+			iconNode.className = dashboard_names[page]["className"];
+			let nameNode = document.createElement("span");
+			nameNode.innerText = dashboard_names[page]["name"];
+			linkNode.appendChild(iconNode);
+			main_node.appendChild(linkNode);
+			linkNode.appendChild(nameNode);
+			accordian.appendChild(main_node);
+		}
+	}
+}
+
+dashAccordian()
+
+async function getUserData() {
+	let headers = {
+		Authorization: localStorage.getItem("token")
+	}
+	let req = await fetch("https://api.uploadr.club/api/v1/user/data",  {
+		"headers": headers
+	})
+	return req.json()
+}
+
+function usernameDropdown() {
+	if (dashboard_urls.indexOf(window.location.pathname) > -1) {
+		// user specific parts
+		getUserData().then(data => {
+			// noinspection JSUnresolvedVariable
+			if (!jQuery.isEmptyObject(data.discord)) {
+				// noinspection JSUnresolvedVariable
+				$("#usernameDropDownSpan")[0].innerHTML = `<img style="border-radius: 50%;" alt="Profile Picture" width="45" src="https://cdn.discordapp.com/avatars/${data.discord.discord_data.user.id}/${data.discord.discord_data.user.avatar}.png?size=256">  ${data.user.username}`;
+			} else {
+				$("#usernameDropDownSpan")[0].innerHTML = data.user.username;
+			}
+		});
+
+		const uDropDown = document.getElementById("usernameDropDown");
+		let opts = [
+			[
+				{
+					name: "Settings",
+					icon: "fas fa-cogs fa-sm fa-fw mr-2 text-gray-400",
+					link_url: "/profile.html"
+				},
+				// {
+				// 	name: "Activity Log",
+				// 	icon: "fas fa-list fa-sm fa-fw mr-2 text-gray-400",
+				// 	link_url: "/auditlog.html"
+				// },
+			],
+			[
+				{
+					name: "Logout",
+					icon: "fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400",
+					link_url: "/logout.html"
+				}
+			]
+		]
+
+		for (let catag in opts) {
+			for (let item in opts[catag]) {
+				let itm = opts[catag][item];
+				let node = document.createElement("a");
+				node.className = "dropdown-item";
+				node.href = itm.link_url;
+				let iconNode = document.createElement("i");
+				iconNode.className = itm.icon;
+				let textNode = document.createElement("span");
+				textNode.innerText= itm.name;
+				node.appendChild(iconNode);
+				node.appendChild(textNode);
+				uDropDown.appendChild(node);
+			}
+			if (opts.length - 1 !== Number(catag)) {
+				let dividerNode = document.createElement("div");
+				dividerNode.className = "dropdown-divider";
+				uDropDown.appendChild(dividerNode);
+			}
+		}
+	}
+}
+
+usernameDropdown()
