@@ -45,9 +45,14 @@ function loadData() {
         } else {
             $("#total_files")[0].innerText = data.files;
             // noinspection JSUnresolvedVariable
-            $("#storage_counter")[0].innerText = `${data.ufs.bytes_used/data.ufs.bytes_available*100}%`;
+            let psUsed = Math.round(data.ufs.bytes_used/(data.ufs.bytes_available + data.ufs.bytes_used) * 100);
             // noinspection JSUnresolvedVariable
-            $("#storage_bar")[0].className = `progress-bar w-${data.ufs.bytes_used/data.ufs.bytes_available*100}`;
+            $("#storage_counter")[0].innerText = `${psUsed}%`;
+            // noinspection JSUnresolvedVariable
+            let sb = $("#storage_bar");
+            sb[0].className = `progress-bar bg-info`;
+            sb[0].setAttribute("aria-valuenow", String(psUsed))
+            sb.css("width", `${psUsed}%`)
             // noinspection JSUnresolvedVariable
             if (!jQuery.isEmptyObject(data.discord)) {
                 let elem = $("#dLinkButton")[0];
