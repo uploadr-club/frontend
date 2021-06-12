@@ -56,12 +56,12 @@ function checkIfLoggedIn() {
 	} else {
 		reqHandler().then(req => {
 			if (!req.ok) {
-				if (window.location.pathname !== "/login.html") {
+				if (window.location.pathname !== "/login.html" && window.location.pathname !== "/register.html") {
 					window.location = "/login.html"
 					return false;
 				}
 			} else {
-				if (window.location.pathname === "/login.html") {
+				if (window.location.pathname === "/login.html" || window.location.pathname === "/register.html") {
 					window.location = "/dash.html"
 				}
 				return true;
