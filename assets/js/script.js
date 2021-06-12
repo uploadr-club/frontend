@@ -49,7 +49,7 @@ function checkIfLoggedIn() {
 	let exp_ts = localStorage.getItem("expire_timestamp");  // expiry timestamp
 	let c_ts = Math.round(new Date() / 1000);  // current timestamp
 	if (exp_ts < c_ts) {
-		if (window.location.pathname !== "/login.html") {
+		if (window.location.pathname !== "/login.html" && window.location.pathname !== "/register.html") {
 			window.location = "/login.html"
 			return false;
 		}

@@ -25,7 +25,7 @@
                             <div class="col-lg-6" style="background: var(--indigo);">
                                 <div class="p-5">
                                     <div class="text-center">
-                                        <h4 class="text-dark mb-4">Welcome Back!</h4>
+                                        <h4 style="color: white;" class="mb-4">Welcome Back!</h4>
                                     </div>
                                     <form name="loginForm" id="formHandler" class="user" onsubmit="return false">
                                         <div class="form-group"><label for="usernameInput">Username</label><input class="form-control form-control-user" type="text" id="usernameInput"
@@ -33,7 +33,7 @@
                                         <div class="form-group"><label for="passwordInput">Password</label><input class="form-control form-control-user" type="password" id="passwordInput"
                                                                                                                   placeholder="Password" name="password"></div>
                                         <p hidden style="color: red;">{{ errorTemplate }}</p>
-<!--                                        <p style="color: orange;"><a style="color: orange;" href="/register.html">Don't have an account yet? Click HERE to Register!</a></p>-->
+                                        <p style="color: #1cc88a;"><a style="color: #1cc88a;" href="/register.html">Don't have an account yet? Click HERE to Register!</a></p>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small"></div>
                                         </div><button class="btn btn-primary btn-block text-white btn-user" type="submit" onclick="validateLogin()">Login</button>

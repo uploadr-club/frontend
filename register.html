@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css?h=a436bee1e5ae414f98db7ca13adfd7c0">
     <link rel="stylesheet" href="assets/css/styles.min.css?h=bb2db7521508fc7db3f11e7c02094a4a">
-    {% include "base/web_panel.html" %}
+    <script src="assets/js/register.js"></script>
 </head>
 
 <body class="bg-gradient-primary">
@@ -27,23 +27,17 @@
                                     <div class="text-center">
                                         <h4 style="color: white;" class="mb-4">User Registration</h4>
                                     </div>
-                                    <form name="registerForm" class="user" method="post" onsubmit="return validateForm()">
+                                    <form id="formHandler" name="registerForm" class="user" onsubmit="return false;">
                                         <div class="form-group"><label for="usernameInput">Username</label><input class="form-control form-control-user" type="text" id="usernameInput"
                                                                                                                   aria-describedby="usernameHelp" placeholder="Enter Username..." name="username" required></div>
                                         <div class="form-group"><label for="passwordInput">Password</label><input class="form-control form-control-user" type="password" id="passwordInput"
                                                                                                                   placeholder="Password" name="password" required></div>
-                                        <div class="form-group"><label for="inviteInput">Invite Code</label><input class="form-control form-control-user" type="text" id="inviteInput"
-                                                                                                                  placeholder="XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX" name="invite" required></div>
-                                        {% if is_error %}
-                                            <p style="color: red;"> {{ error_content }}</p>
-                                        {% endif %}
-                                        {% if is_created %}
-                                            <p style="color: limegreen;"> Successfully created your account!</p>
-                                        {% endif %}
-                                        <p style="color: orange;"><a style="color: orange;" href="/login">Already Have an account? Click HERE to Login!</a></p>
+                                        <p hidden style="color: red;">{{ errorTemplate }}</p>
+                                        <p id="successMessage" hidden style="color: #169b6b;">Successfully Registered an account, please Click the login button to continue.</p>
+                                        <p style="color: #1cc88a;"><a style="color: #1cc88a;" href="/login.html">Already Have an account? Click HERE to Login!</a></p>
                                         <div class="form-group">
                                             <div class="custom-control custom-checkbox small"></div>
-                                        </div><button class="btn btn-primary btn-block text-white btn-user" type="submit">Register</button>
+                                        </div><button class="btn btn-primary btn-block text-white btn-user" type="submit" onclick="validateRegistration()">Register</button>
                                         <hr>
                                     </form>
                                 </div>
