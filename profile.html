@@ -14,7 +14,7 @@
     <script src="./assets/js/profile.js"></script>
 </head>
 
-<body id="page-top" data-user-token="{{ user.token }}">
+<body id="page-top">
     <div id="wrapper">
         <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
             <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
@@ -184,24 +184,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets/js/script.js?h=1e4be2044492a6ec5dc404d03b20a15b"></script>
-    <script>
-        async function resetToken() {
-            await fetch("https://uploadr.club/api/reset_token", {
-                method: "POST",
-                body: document.body.getAttribute("data-user-token")
-            }).then(async function (response) {
-                await response.json().then(function (rsp) {
-                    if (response.status === 200) {
-                        $("#response_box")[0].innerHTML = `New Token: ${rsp["new_token"]}`;
-                        document.body.setAttribute("data-user-token", rsp["new_token"]);
-                        $("#scroll-to-top").click();
-                    } else if (response.status === 403) {
-                        $("#response_box")[0].innerHTML = `${rsp["error"]}`;
-                    }
-                });
-            });
-        }
-    </script>
 </body>
 
 </html>

@@ -197,5 +197,27 @@ function changePassword() {
     });
 }
 
+async function resetTokenFetch() {
+    let headers = {
+        Authorization: localStorage.getItem("token")
+    };
+    let req = await fetch("https://api.uploadr.club/api/v1/user/reset_token", {
+        method: "POST",
+        headers: headers,
+    });
+
+    return req.json();
+}
+
+function resetToken() {
+    resetTokenFetch().then(data => {
+        let success = $("#successMsgLoc")[0];
+        success.innerText = `New Token: <code>${data.newToken}</code>`;
+        success.hidden = false;
+        $("#errorMsgLoc")[0].hidden = true;
+        $("#scroll-to-top")[0].click();
+    });
+}
+
 loadData()
 
