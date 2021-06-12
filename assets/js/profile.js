@@ -212,7 +212,7 @@ async function resetTokenFetch() {
 function resetToken() {
     resetTokenFetch().then(data => {
         let success = $("#successMsgLoc")[0];
-        success.innerText = `New Token: <code>${data.newToken}</code>`;
+        success.innerText = `New Token: ${data.newToken}`;
         success.hidden = false;
         $("#errorMsgLoc")[0].hidden = true;
         $("#scroll-to-top")[0].click();
