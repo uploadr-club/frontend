@@ -1,7 +1,7 @@
 // noinspection JSUnresolvedVariable
 
 async function getUserData() {
-    headers = {
+    let headers = {
         Authorization: localStorage.getItem("token")
     }
     let req = await fetch("https://api.uploadr.club/api/v1/user/data",  {
@@ -11,7 +11,7 @@ async function getUserData() {
 }
 
 async function getDomains() {
-    headers = {
+    let headers = {
         Authorization: localStorage.getItem("token")
     }
     let req = await fetch("https://api.uploadr.club/api/v1/domains",  {
@@ -44,11 +44,13 @@ function loadData() {
                 node.selected = userdata.domain === key;
                 node.value = key;
                 node.innerText = key;
-                if (data[key]["private"]) {
-                    privateDomainGroup.hidden = false;
-                    privateDomainGroup.appendChild(node);
-                } else {
-                    publicDomainOptGroup.appendChild(node);
+                if (data.hasOwnProperty(key)) {  // should always be true as key is from data
+                    if (data[key]["private"]) {
+                        privateDomainGroup.hidden = false;
+                        privateDomainGroup.appendChild(node);
+                    } else {
+                        publicDomainOptGroup.appendChild(node);
+                    }
                 }
             }
         });
