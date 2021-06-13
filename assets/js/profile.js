@@ -224,26 +224,6 @@ function resetToken() {
     });
 }
 
-async function wipeUserFetch() {
-    let headers = {
-        Authorization: localStorage.getItem("token")
-    };
-    let req = await fetch("https://api.uploadr.club/api/v1/user/wipeUser", {
-        method: "POST",
-        headers: headers,
-    });
-
-    return req.json();
-}
-
-function wipeUser() {
-    wipeUserFetch().then(data => {
-        localStorage.removeItem("token");
-        localStorage.removeItem("expire_timestamp");
-        localStorage.removeItem("user_uuid");
-        localStorage.removeItem("darkSwitch");
-    });
-}
 
 loadData()
 
