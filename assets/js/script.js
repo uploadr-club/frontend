@@ -164,6 +164,10 @@ function usernameDropdown() {
 				let itm = opts[catag][item];
 				let node = document.createElement("a");
 				node.className = "dropdown-item";
+				console.log(itm.name)
+				if (itm.name === "Logout") {
+					node.className += "";
+				}
 				node.href = itm.link_url;
 				let iconNode = document.createElement("i");
 				iconNode.className = itm.icon;

@@ -28,6 +28,7 @@ function loadData() {
         let anc = $("#authorName")[0];
         anc.placeholder = data.user.username;
         $("#webhook_url")[0].value = data.user.webhook_url;
+        $("#embedTitle")[0].value = data.embed.title;
         $("#embedColor")[0].value = `#${data.embed.color}`;
         $("#embedDescription")[0].value = data.embed.description;
         $("#embedProviderName")[0].value = data.embed.provider_name;
@@ -132,12 +133,14 @@ function saveDiscordSettings() {
             success.hidden = false;
             $("#errorMsgLoc")[0].hidden = true;
             $("#scroll-to-top")[0].click();
+            loadData()
         } else {
             let failure = $("#errorMsgLoc")[0];
             failure.innerText = "Failed to save Discord Settings";
             failure.hidden = false;
             $("#successMsgLoc")[0].hidden = true;
             $("#scroll-to-top")[0].click();
+            loadData()
         }
     })
 }
@@ -216,6 +219,27 @@ function resetToken() {
         success.hidden = false;
         $("#errorMsgLoc")[0].hidden = true;
         $("#scroll-to-top")[0].click();
+    });
+}
+
+async function wipeUserFetch() {
+    let headers = {
+        Authorization: localStorage.getItem("token")
+    };
+    let req = await fetch("https://api.uploadr.club/api/v1/user/wipeUser", {
+        method: "POST",
+        headers: headers,
+    });
+
+    return req.json();
+}
+
+function wipeUser() {
+    wipeUserFetch().then(data => {
+        localStorage.removeItem("token");
+        localStorage.removeItem("expire_timestamp");
+        localStorage.removeItem("user_uuid");
+        localStorage.removeItem("darkSwitch");
     });
 }
 
