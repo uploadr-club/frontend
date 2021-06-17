@@ -51,7 +51,10 @@ var stripeElements = function(publishableKey) {
         }
     };
 
-    var card = elements.create("card", { style: style });
+    var card = elements.create("card", {
+        style: style,
+        hidePostalCode: true
+    });
 
     card.mount("#card-element");
     card.on("focus", function() {
