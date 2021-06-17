@@ -208,7 +208,7 @@ function showPriceDetails(plan) {
 }
 
 function getConfig() {
-    return fetch("https://api.uploadr.club/api/v1/billing/v1/config", {
+    return fetch(`https://api.uploadr.club/api/v1/billing/v1/config?plan=${localStorage.get('plan')}`, {
         method: "get",
         headers: {
             "Content-Type": "application/json"

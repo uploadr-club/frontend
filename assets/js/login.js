@@ -30,6 +30,7 @@ async function validateLogin() {
                 errorMsg.hidden = true;
             }
             localStorage.setItem("token", data.token);
+            localStorage.setItem("plan", "premium")
             localStorage.setItem("expire_timestamp", data.expire_timestamp);
             localStorage.setItem("user_uuid", data.user_uuid);
             window.location = "/dash.html";
