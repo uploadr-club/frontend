@@ -1,191 +1,485 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
     <title>Profile - Uploadr.club</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=ed0f9fbe99ee9c4c4c6250bf0ab5396c">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css?h=a436bee1e5ae414f98db7ca13adfd7c0">
-    <link rel="stylesheet" href="assets/css/styles.min.css?h=bb2db7521508fc7db3f11e7c02094a4a">
+    <link
+      rel="stylesheet"
+      href="assets/bootstrap/css/bootstrap.min.css?h=ed0f9fbe99ee9c4c4c6250bf0ab5396c"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/fonts/fontawesome5-overrides.min.css?h=a436bee1e5ae414f98db7ca13adfd7c0"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/css/styles.min.css?h=bb2db7521508fc7db3f11e7c02094a4a"
+    />
     <script src="./assets/js/profile.js"></script>
-</head>
+  </head>
 
-<body id="page-top">
+  <body id="page-top">
     <div id="wrapper">
-        <nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
-            <div class="container-fluid d-flex flex-column p-0"><a class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
-                    <div class="sidebar-brand-icon rotate-n-15"><img alt="logo" src="assets/img/logos/uploadr-logo-goyim.svg?h=b25cab0586ef382b73e5de4bc929da58" style="width: 45px;height: 42px;"></div>
-                    <div class="sidebar-brand-text mx-3"><span>Uploadr</span></div>
-                </a>
-                <hr class="sidebar-divider my-0">
-                <ul class="navbar-nav text-light" id="accordionSidebar">
-                </ul>
-                <div class="row" style="margin-top: 15px;">
-                    <div class="col text-center d-flex justify-content-xl-center"><i class="fas fa-sun d-xl-flex align-items-xl-center" style="font-size: 24px;margin-right: 8px;"></i><div class="custom-control custom-switch"><input class="custom-control-input" type="checkbox" id="darkSwitch" /><label class="custom-control-label" for="darkSwitch"></label></div><i class="fas fa-moon d-xl-flex align-items-xl-center" style="font-size: 24px;"></i></div>
-                </div>
-                <div class="text-center d-none d-md-inline"><button class="btn rounded-circle border-0" id="sidebarToggle" type="button"></button></div>
+      <nav
+        class="
+          navbar navbar-dark
+          align-items-start
+          sidebar sidebar-dark
+          accordion
+          bg-gradient-primary
+          p-0
+        "
+      >
+        <div class="container-fluid d-flex flex-column p-0">
+          <a
+            class="
+              navbar-brand
+              d-flex
+              justify-content-center
+              align-items-center
+              sidebar-brand
+              m-0
+            "
+            href="#"
+          >
+            <div class="sidebar-brand-icon rotate-n-15">
+              <img
+                alt="logo"
+                src="assets/img/logos/uploadr-logo-goyim.svg?h=b25cab0586ef382b73e5de4bc929da58"
+                style="width: 45px; height: 42px"
+              />
             </div>
-        </nav>
-        <div class="d-flex flex-column" id="content-wrapper">
-            <div id="content">
-                <nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
-                    <div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle mr-3" id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
-                        <ul class="navbar-nav flex-nowrap ml-auto">
-                            <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
-                                <div class="dropdown-menu dropdown-menu-right p-3 animated--grow-in" aria-labelledby="searchDropdown">
-                                    <form class="form-inline mr-auto navbar-search w-100">
-                                        <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
-                                            <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </li>
-                            <li class="nav-item dropdown no-arrow">
-                                <div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown" href="#"><span id="usernameDropDownSpan" class="d-none d-lg-inline mr-2 text-gray-600 small">{{ user.name }}</span></a>
-                                    <div id="usernameDropDown" class="dropdown-menu shadow dropdown-menu-right animated--grow-in">
-                                    </div>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-                <div class="container-fluid">
-                    <div class="d-sm-flex justify-content-between align-items-center mb-4">
-                        <h2 class="text-primary font-weight-bold mb-0" style="display: inline;">Profile</h2>
-                        <a onclick="window.open(`https://api.uploadr.club/api/v1/download/sxcu?api_key=${localStorage.getItem('token')}&embed=false`)" class="btn btn-primary btn-sm d-none d-sm-inline-block" role="button"><i class="fas fa-download fa-sm text-white-50"></i>&nbsp;Download SXCU Config</a>
-                    </div>
-
-                    <div class="row mb-3">
-                        <div class="col-lg-8">
-                            <div class="row">
-                                <div class="col">
-                                    <p id="errorMsgLoc" hidden style="color: red">{{ error_reason }}</p>
-                                    <p id="successMsgLoc" hidden style="color: lawngreen">{{ success_reason }}</p>
-                                    <div class="card shadow mb-3">
-                                        <div class="card-header py-3">
-                                            <p class="text-primary m-0 font-weight-bold">User Settings</p>
-                                        </div>
-                                        <div class="card-body">
-                                            <form name="userSettings" onsubmit="return false;">
-                                                <p>Put @ to use the domain without a subdomain</p>
-                                                <div class="form-row">
-                                                    <div class="col">
-                                                        <div class="form-group"><label for="subdomain"><strong>Subdomain</strong><br></label><input class="form-control" type="text" id="subdomain"
-                                                                                                                                                    placeholder="{{ user.domain }}" name="subdomain" required="" value="{{ user.domain }}"></div>
-                                                    </div>
-                                                    <div class="col">
-                                                        <div class="form-group">
-                                                            <label for="domain"><strong>Domain</strong><br></label>
-                                                            <select class="form-control" id="domain" name="domain" required="">
-                                                            <optgroup id="publicDomainOptGroup" label="Public Domains">
-
-                                                            </optgroup>
-                                                            <optgroup hidden id="privateDomainOptGroup" label="Private Domains">
-                                                            </optgroup>
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <div class="form-group"><button class="btn btn-primary btn-sm" type="submit" onclick="saveUserSettings()">Save Settings</button></div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="card shadow">
-                                        <div class="card-header py-3">
-                                            <p class="text-primary m-0 font-weight-bold">Discord Settings</p>
-                                        </div>
-                                        <div class="card-body">
-                                            <form onsubmit="return false;" name="discordForm">
-                                                <div>
-                                                    <p>You may use any of the following tags to get their equivalent information:</p>
-                                                    <p><code>{upload_timestamp}</code> the timestamp of the upload being created</p>
-                                                    <p><code>{size}</code> the file size</p>
-                                                    <p><code>{username}</code> username</p>
-                                                    <p><code>{datetime}</code> the current date and time formatted as day/month/year hour:minute</p>
-                                                    <p><code>{date}</code> the current date formatted as day/month/year</p>
-                                                    <p><code>{time}</code> the current time formatted as hour:minute</p>
-                                                    <p><code>{hour}</code> the current hour</p>
-                                                    <p><code>{minute}</code> the current minute</p>
-                                                    <p><code>{day}</code> the current day</p>
-                                                    <p><code>{month}</code> the current month</p>
-                                                    <p><code>{year}</code> the current year</p>
-                                                    <p><code>{domain}</code> the current domain</p>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label for="webhook_url"><strong>Webhook URL</strong><br></label><input class="form-control" type="text" id="webhook_url"
-                                                                                                                                               placeholder="https://discord.com/api/webhooks/id/secret" name="webhook_url">
-                                                    <label for="embedTitle"><strong>Embed Title</strong><br></label><input class="form-control" type="text" id="embedTitle"
-                                                                                                                                 placeholder="{{ username }}" name="embedTitle">
-                                                    <label for="authorName"><strong>Embed Author Name</strong><br></label><input class="form-control" type="text" id="authorName"
-                                                                                                                           placeholder="{{ username }}" name="authorName">
-                                                    <label for="authorURL"><strong>Embed Author URL</strong><br></label><input class="form-control" type="text" id="authorURL"
-                                                                                                                                 placeholder="{{ username }}" name="authorURL">
-                                                    <label for="embedProviderName"><strong>Embed Provider Name</strong><br></label><input class="form-control" type="text" id="embedProviderName"
-                                                                                                                           placeholder="Uploadr.Club" name="embedProviderName">
-                                                    <label for="embedProviderURL"><strong>Embed Provider URL</strong><br></label><input class="form-control" type="text" id="embedProviderURL"
-                                                                                                                                          placeholder="https://uploadr.Club" name="embedProviderURL">
-                                                    <label for="embedDescription"><strong>Embed Description</strong><br></label><textarea class="form-control" type="text" id="embedDescription"
-                                                                                                                                           placeholder="Powered by uploadr.club" name="embedDescription"></textarea>
-                                                </div>
-                                                <div class="form-row">
-                                                    <div class="col">
-                                                        <div class="form-group"><label for="embedColor"><strong>Embed Color</strong></label></div><input class="border-primary shadow-none" type="color" id="embedColor" name="embedColor" value="#FFFFFF">
-                                                    </div>
-                                                </div>
-                                                <br>
-
-                                                <div class="form-group"><button class="btn btn-primary btn-sm" type="submit" onclick="saveDiscordSettings();">Save&nbsp;Settings</button></div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <br>
-                                    <div class="card shadow">
-                                        <div class="card-header py-3">
-                                            <p class="text-primary m-0 font-weight-bold">Security Settings</p>
-                                        </div>
-                                        <div class="card-body">
-                                            <button class="btn btn-danger btn-sm" onclick="revokeSessions()">Logout ALL sessions</button>
-                                            <br>
-                                            <br>
-                                            <form onsubmit="return false;" name="passwordChange">
-                                                <div class="form-group"><label for="password"><strong>Password</strong><br></label><input required class="form-control" type="password" id="password"
-                                                                                                                                               placeholder="********" name="new_password"></div>
-                                                <div class="form-group"><button class="btn btn-danger btn-sm" type="submit" onclick="changePassword()">Save Password</button></div>
-                                            </form>
-                                            <br>
-                                            <button class="btn btn-danger btn-sm" onclick="resetToken()">Reset Token</button>
-                                        </div>
-                                    </div>
-                                    <br>
-<!--                                    <div class="card shadow mb-5">-->
-<!--                                        <div class="card-header py-3">-->
-<!--                                            <p class="text-primary m-0 font-weight-bold">File Settings</p>-->
-<!--                                        </div>-->
-<!--                                        <div class="card-body">-->
-<!--                                        </div>-->
-<!--                                    </div>-->
-                                </div>
-                            </div>
+            <div class="sidebar-brand-text mx-3"><span>Uploadr</span></div>
+          </a>
+          <hr class="sidebar-divider my-0" />
+          <ul class="navbar-nav text-light" id="accordionSidebar"></ul>
+          <div class="row" style="margin-top: 15px">
+            <div class="col text-center d-flex justify-content-xl-center">
+              <i
+                class="fas fa-sun d-xl-flex align-items-xl-center"
+                style="font-size: 24px; margin-right: 8px"
+              ></i>
+              <div class="custom-control custom-switch">
+                <input
+                  class="custom-control-input"
+                  type="checkbox"
+                  id="darkSwitch"
+                /><label class="custom-control-label" for="darkSwitch"></label>
+              </div>
+              <i
+                class="fas fa-moon d-xl-flex align-items-xl-center"
+                style="font-size: 24px"
+              ></i>
+            </div>
+          </div>
+          <div class="text-center d-none d-md-inline">
+            <button
+              class="btn rounded-circle border-0"
+              id="sidebarToggle"
+              type="button"
+            ></button>
+          </div>
+        </div>
+      </nav>
+      <div class="d-flex flex-column" id="content-wrapper">
+        <div id="content">
+          <nav
+            class="
+              navbar navbar-light navbar-expand
+              bg-white
+              shadow
+              mb-4
+              topbar
+              static-top
+            "
+          >
+            <div class="container-fluid">
+              <button
+                class="btn btn-link d-md-none rounded-circle mr-3"
+                id="sidebarToggleTop"
+                type="button"
+              >
+                <i class="fas fa-bars"></i>
+              </button>
+              <ul class="navbar-nav flex-nowrap ml-auto">
+                <li class="nav-item dropdown d-sm-none no-arrow">
+                  <a
+                    class="dropdown-toggle nav-link"
+                    aria-expanded="false"
+                    data-toggle="dropdown"
+                    href="#"
+                    ><i class="fas fa-search"></i
+                  ></a>
+                  <div
+                    class="
+                      dropdown-menu dropdown-menu-right
+                      p-3
+                      animated--grow-in
+                    "
+                    aria-labelledby="searchDropdown"
+                  >
+                    <form class="form-inline mr-auto navbar-search w-100">
+                      <div class="input-group">
+                        <input
+                          class="bg-light form-control border-0 small"
+                          type="text"
+                          placeholder="Search for ..."
+                        />
+                        <div class="input-group-append">
+                          <button class="btn btn-primary py-0" type="button">
+                            <i class="fas fa-search"></i>
+                          </button>
                         </div>
-                    </div>
-
-                </div>
+                      </div>
+                    </form>
+                  </div>
+                </li>
+                <li class="nav-item dropdown no-arrow">
+                  <div class="nav-item dropdown no-arrow">
+                    <a
+                      class="dropdown-toggle nav-link"
+                      aria-expanded="false"
+                      data-toggle="dropdown"
+                      href="#"
+                      ><span
+                        id="usernameDropDownSpan"
+                        class="d-none d-lg-inline mr-2 text-gray-600 small"
+                        >{{ user.name }}</span
+                      ></a
+                    >
+                    <div
+                      id="usernameDropDown"
+                      class="
+                        dropdown-menu
+                        shadow
+                        dropdown-menu-right
+                        animated--grow-in
+                      "
+                    ></div>
+                  </div>
+                </li>
+              </ul>
             </div>
-            <footer class="bg-white sticky-footer">
-                <div class="container my-auto">
-                    <div class="text-center my-auto copyright"><span>Copyright © Uploadr.club 2021</span></div>
+          </nav>
+          <div class="container-fluid">
+            <div
+              class="d-sm-flex justify-content-between align-items-center mb-4"
+            >
+              <h2
+                class="text-primary font-weight-bold mb-0"
+                style="display: inline"
+              >
+                Profile
+              </h2>
+              <a
+                onclick="window.open(`https://api.uploadr.club/api/v1/download/sxcu?api_key=${localStorage.getItem('token')}&embed=false`)"
+                class="btn btn-primary btn-sm d-none d-sm-inline-block"
+                role="button"
+                ><i class="fas fa-download fa-sm text-white-50"></i
+                >&nbsp;Download SXCU Config</a
+              >
+            </div>
+
+            <div class="row mb-3">
+              <div class="col-lg-8">
+                <div class="row">
+                  <div class="col">
+                    <p id="errorMsgLoc" hidden style="color: red">
+                      {{ error_reason }}
+                    </p>
+                    <p id="successMsgLoc" hidden style="color: lawngreen">
+                      {{ success_reason }}
+                    </p>
+                    <div class="card shadow mb-3">
+                      <div class="card-header py-3">
+                        <p class="text-primary m-0 font-weight-bold">
+                          User Settings
+                        </p>
+                      </div>
+                      <div class="card-body">
+                        <form name="userSettings" onsubmit="return false;">
+                          <p>Put @ to use the domain without a subdomain</p>
+                          <div class="form-row">
+                            <div class="col">
+                              <div class="form-group">
+                                <label for="subdomain"
+                                  ><strong>Subdomain</strong><br /></label
+                                ><input
+                                  class="form-control"
+                                  type="text"
+                                  id="subdomain"
+                                  placeholder="{{ user.domain }}"
+                                  name="subdomain"
+                                  required=""
+                                  value="{{ user.domain }}"
+                                />
+                              </div>
+                            </div>
+                            <div class="col">
+                              <div class="form-group">
+                                <label for="domain"
+                                  ><strong>Domain</strong><br
+                                /></label>
+                                <select
+                                  class="form-control"
+                                  id="domain"
+                                  name="domain"
+                                  required=""
+                                >
+                                  <optgroup
+                                    id="publicDomainOptGroup"
+                                    label="Public Domains"
+                                  ></optgroup>
+                                  <optgroup
+                                    hidden
+                                    id="privateDomainOptGroup"
+                                    label="Private Domains"
+                                  ></optgroup>
+                                </select>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="form-group">
+                            <button
+                              class="btn btn-primary btn-sm"
+                              type="submit"
+                              onclick="saveUserSettings()"
+                            >
+                              Save Settings
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <div class="card shadow">
+                      <div class="card-header py-3">
+                        <p class="text-primary m-0 font-weight-bold">
+                          Discord Settings
+                        </p>
+                      </div>
+                      <div class="card-body">
+                        <form onsubmit="return false;" name="discordForm">
+                          <div>
+                            <p>
+                              You may use any of the following tags to get their
+                              equivalent information:
+                            </p>
+                            <p>
+                              <code>{upload_timestamp}</code> the timestamp of
+                              the upload being created
+                            </p>
+                            <p><code>{size}</code> the file size</p>
+                            <p><code>{username}</code> username</p>
+                            <p>
+                              <code>{datetime}</code> the current date and time
+                              formatted as day/month/year hour:minute
+                            </p>
+                            <p>
+                              <code>{date}</code> the current date formatted as
+                              day/month/year
+                            </p>
+                            <p>
+                              <code>{time}</code> the current time formatted as
+                              hour:minute
+                            </p>
+                            <p><code>{hour}</code> the current hour</p>
+                            <p><code>{minute}</code> the current minute</p>
+                            <p><code>{day}</code> the current day</p>
+                            <p><code>{month}</code> the current month</p>
+                            <p><code>{year}</code> the current year</p>
+                            <p><code>{domain}</code> the current domain</p>
+                          </div>
+                          <div class="form-group">
+                            <label for="webhook_url"
+                              ><strong>Webhook URL</strong><br /></label
+                            ><input
+                              class="form-control"
+                              type="text"
+                              id="webhook_url"
+                              placeholder="https://discord.com/api/webhooks/id/secret"
+                              name="webhook_url"
+                            />
+                            <label for="embedTitle"
+                              ><strong>Embed Title</strong><br /></label
+                            ><input
+                              class="form-control"
+                              type="text"
+                              id="embedTitle"
+                              placeholder="{{ username }}"
+                              name="embedTitle"
+                            />
+                            <label for="authorName"
+                              ><strong>Embed Author Name</strong><br /></label
+                            ><input
+                              class="form-control"
+                              type="text"
+                              id="authorName"
+                              placeholder="{{ username }}"
+                              name="authorName"
+                            />
+                            <label for="authorURL"
+                              ><strong>Embed Author URL</strong><br /></label
+                            ><input
+                              class="form-control"
+                              type="text"
+                              id="authorURL"
+                              placeholder="{{ username }}"
+                              name="authorURL"
+                            />
+                            <label for="embedProviderName"
+                              ><strong>Embed Provider Name</strong><br /></label
+                            ><input
+                              class="form-control"
+                              type="text"
+                              id="embedProviderName"
+                              placeholder="Uploadr.Club"
+                              name="embedProviderName"
+                            />
+                            <label for="embedProviderURL"
+                              ><strong>Embed Provider URL</strong><br /></label
+                            ><input
+                              class="form-control"
+                              type="text"
+                              id="embedProviderURL"
+                              placeholder="https://uploadr.Club"
+                              name="embedProviderURL"
+                            />
+                            <label for="embedDescription"
+                              ><strong>Embed Description</strong><br /></label
+                            ><textarea
+                              class="form-control"
+                              type="text"
+                              id="embedDescription"
+                              placeholder="Powered by uploadr.club"
+                              name="embedDescription"
+                            ></textarea>
+                          </div>
+                          <div class="form-row">
+                            <div class="col">
+                              <div class="form-group">
+                                <label for="embedColor"
+                                  ><strong>Embed Color</strong></label
+                                >
+                              </div>
+                              <input
+                                class="border-primary shadow-none"
+                                type="color"
+                                id="embedColor"
+                                name="embedColor"
+                                value="#FFFFFF"
+                              />
+                            </div>
+                          </div>
+                          <br />
+
+                          <div class="form-group">
+                            <button
+                              class="btn btn-primary btn-sm"
+                              type="submit"
+                              onclick="saveDiscordSettings();"
+                            >
+                              Save&nbsp;Settings
+                            </button>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                    <br />
+                    <div class="card shadow">
+                      <div class="card-header py-3">
+                        <p class="text-primary m-0 font-weight-bold">
+                          Security Settings
+                        </p>
+                      </div>
+                      <div class="card-body">
+                        <button
+                          class="btn btn-danger btn-sm"
+                          onclick="revokeSessions()"
+                        >
+                          Logout ALL sessions
+                        </button>
+                        <br />
+                        <br />
+                        <form onsubmit="return false;" name="passwordChange">
+                          <div class="form-group">
+                            <label for="password"
+                              ><strong>Password</strong><br /></label
+                            ><input
+                              required
+                              class="form-control"
+                              type="password"
+                              id="password"
+                              placeholder="********"
+                              name="new_password"
+                            />
+                          </div>
+                          <div class="form-group">
+                            <button
+                              class="btn btn-danger btn-sm"
+                              type="submit"
+                              onclick="changePassword()"
+                            >
+                              Save Password
+                            </button>
+                          </div>
+                        </form>
+                        <br />
+                        <button
+                          class="btn btn-danger btn-sm"
+                          onclick="resetToken()"
+                        >
+                          Reset Token
+                        </button>
+                      </div>
+                    </div>
+                    <br />
+                    <!--                                    <div class="card shadow mb-5">-->
+                    <!--                                        <div class="card-header py-3">-->
+                    <!--                                            <p class="text-primary m-0 font-weight-bold">File Settings</p>-->
+                    <!--                                        </div>-->
+                    <!--                                        <div class="card-body">-->
+                    <!--                                        </div>-->
+                    <!--                                    </div>-->
+                  </div>
                 </div>
-            </footer>
-        </div><a id="scroll-to-top" class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="bg-white sticky-footer">
+          <div class="container my-auto">
+            <div class="text-center my-auto copyright">
+              <span>Copyright © Uploadr.club 2021</span>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <a
+        id="scroll-to-top"
+        class="border rounded d-inline scroll-to-top"
+        href="#page-top"
+        ><i class="fas fa-angle-up"></i
+      ></a>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets/js/script.js?h=1e4be2044492a6ec5dc404d03b20a15b"></script>
-</body>
-
+  </body>
 </html>
