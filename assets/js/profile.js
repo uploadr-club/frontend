@@ -54,6 +54,9 @@ function loadData() {
                 }
             }
         });
+        $("#sxcu_button")[0].onclick = () => {
+            window.open(`https://api.uploadr.club/api/v1/download/sxcu?api_key=${data.user.api_token}&embed=no`)
+        }
     });
 
 }
