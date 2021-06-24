@@ -76,8 +76,8 @@ checkIfLoggedIn()
 const dashboard_urls = [
 	"/dash.html",
 	"/profile.html",
-	// "files.html",
-	// "auditlog.html"
+	"/files.html",
+	// "/auditlog.html"
 ];
 
 function dashAccordian() {
@@ -90,6 +90,10 @@ function dashAccordian() {
 			name: "Profile",
 			className: "fas fa-user"
 		},
+		{
+			name: "Files",
+			className: "fas fa-table"
+		}
 	]
 	if (dashboard_urls.indexOf(window.location.pathname) > -1) {
 		let accordian = document.getElementById("accordionSidebar");
