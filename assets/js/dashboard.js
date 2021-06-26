@@ -54,6 +54,8 @@ function loadData() {
             sb[0].setAttribute("aria-valuenow", String(psUsed))
             sb.css("width", `${psUsed}%`)
             // noinspection JSUnresolvedVariable
+            $("#userinfo")[0].innerText = `UUID: ${data.user.uuid}\nFile Limit Enabled: ${data.ufs.enabled}`;
+            // noinspection JSUnresolvedVariable
             if (!jQuery.isEmptyObject(data.discord)) {
                 let elem = $("#dLinkButton")[0];
                 elem.innerText = "Discord already linked";
