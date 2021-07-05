@@ -26,7 +26,7 @@ async function getGlobalFileViews() {
 }
 
 async function getUploadedFiles(page) {
-  headers = {
+  let headers = {
     Authorization: localStorage.getItem("token"),
   };
   let req = await fetch("https://api.uploadr.club/api/v1/user/files", {
@@ -113,7 +113,7 @@ function loadData() {
       while (a_box.firstChild) {
         a_box.removeChild(a_box.firstChild);
       }
-      data.forEach((item, index) => {
+      data.forEach(item => {
         let node = document.createElement("li");
         node.classList.add("activity-item", "list-group-item");
         let innerNode = document.createElement("div");
