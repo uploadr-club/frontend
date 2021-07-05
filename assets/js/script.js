@@ -33,6 +33,7 @@ window.addEventListener("load", (() => {
       "mousewheel DOMMouseScroll wheel",
       function (t) {
         if (e(window).width() > 768) {
+          // noinspection JSUnresolvedVariable
           var o = t.originalEvent,
             a = o.wheelDelta || -o.detail;
           (this.scrollTop += 30 * (a < 0 ? 1 : -1))
