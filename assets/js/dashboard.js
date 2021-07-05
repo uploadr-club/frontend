@@ -71,10 +71,10 @@ function loadData() {
 
     getMOTD().then(data => {
         if (data.error) {
-            $("#motd")[0].innerText = data.error.description;
+            $("#motd")[0].innerHTML = data.error.description;
         } else {
             // noinspection JSUnresolvedVariable
-            $("#motd")[0].innerText = data.motd;
+            $("#motd")[0].innerHTML = data.motd;
         }
     })
 
