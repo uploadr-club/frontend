@@ -8,17 +8,42 @@ async function getUserData() {
     return req.json();
 }
 
+async function getDomainCount() {
+    let headers = {
+        Authorization: localStorage.getItem("token"),
+    };
+    let req = await fetch("https://api.uploadr.club/api/v1/admin/domains/count", {
+        headers: headers,
+    });
+    return req.json();
+}
+
+async function getFileCount() {
+    let headers = {
+        Authorization: localStorage.getItem("token"),
+    };
+    let req = await fetch("https://api.uploadr.club/api/v1/admin/files/count", {
+        headers: headers,
+    });
+    return req.json();
+}
+
 function loadData() {
     getUserData().then((data) => {
         if (data.error) {
             $("#total_files")[0].innerText = data.error.description;
         } else {
-            // noinspection JSUnresolvedVariable
-            $(
-                "#userinfo"
-            )[0].innerText = `UUID: ${data.user.uuid}\nFile Limit Enabled: ${data.ufs.enabled}`;
+            getDomainCount().then(dc => {
+                // noinspection JSUnresolvedVariable
+                $("#domain_count")[0].innerText = dc.domains;
+            });
+            getFileCount().then(dc => {
+                // noinspection JSUnresolvedVariable
+                $("#file_count")[0].innerText = dc.files;
+            });
+
             // noinspection JSBitwiseOperatorUsage
-            if (userFlags & 8 === 0 ) {
+            if (data.user.flags & 8 === 0 ) {
                 window.location = "/dash.html";  // redirect to dashboard if insufficient perms
             }
         }
