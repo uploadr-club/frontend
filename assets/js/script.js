@@ -1,5 +1,7 @@
 const darkSwitch = document.getElementById("darkSwitch");
 
+let userFlags = 0;
+
 function initTheme() {
   let e = "dark" === localStorage.getItem("darkSwitch");
   null === localStorage.getItem("darkSwitch") && (e = !0),
@@ -109,6 +111,7 @@ const dashboard_urls = [
   "/dash.html",
   "/profile.html",
   "/files.html",
+  "/admin/dash.html",
   // "/auditlog.html"
 ];
 
@@ -117,34 +120,46 @@ function dashAccordian() {
     {
       name: "Dashboard",
       className: "fas fa-tachometer-alt",
+      requirement: 0,
     },
     {
       name: "Profile",
       className: "fas fa-user",
+      requirement: 0,
     },
     {
       name: "Files",
       className: "fas fa-table",
+      requirement: 0,
     },
+    {
+      name: "Admin Dashboard",
+      className: "fas fa-toolbox",
+      requirement: 8,
+    }
   ];
   if (dashboard_urls.indexOf(window.location.pathname) > -1) {
     let accordian = document.getElementById("accordionSidebar");
     for (let page in dashboard_urls) {
-      let main_node = document.createElement("li");
-      main_node.className = "nav-item";
-      let linkNode = document.createElement("a");
-      linkNode.href = dashboard_urls[page];
-      linkNode.className = `nav-link${
-        dashboard_urls[page] === window.location.pathname ? " active" : ""
-      }`;
-      let iconNode = document.createElement("i");
-      iconNode.className = dashboard_names[page]["className"];
-      let nameNode = document.createElement("span");
-      nameNode.innerText = dashboard_names[page]["name"];
-      linkNode.appendChild(iconNode);
-      main_node.appendChild(linkNode);
-      linkNode.appendChild(nameNode);
-      accordian.appendChild(main_node);
+      // noinspection JSBitwiseOperatorUsage
+      if (dashboard_names[page].requirement === 0 || userFlags & dashboard_names[page].requirement) {
+
+        let main_node = document.createElement("li");
+        main_node.className = "nav-item";
+        let linkNode = document.createElement("a");
+        linkNode.href = dashboard_urls[page];
+        linkNode.className = `nav-link${
+            dashboard_urls[page] === window.location.pathname ? " active" : ""
+        }`;
+        let iconNode = document.createElement("i");
+        iconNode.className = dashboard_names[page]["className"];
+        let nameNode = document.createElement("span");
+        nameNode.innerText = dashboard_names[page]["name"];
+        linkNode.appendChild(iconNode);
+        main_node.appendChild(linkNode);
+        linkNode.appendChild(nameNode);
+        accordian.appendChild(main_node);
+      }
     }
   }
 }
