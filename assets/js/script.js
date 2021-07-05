@@ -134,19 +134,22 @@ function dashAccordian(userFlags) {
       name: "Admin Dashboard",
       className: "fas fa-toolbox",
       requirement: 8,
-    }
+    },
   ];
   if (dashboard_urls.indexOf(window.location.pathname) > -1) {
     let accordian = document.getElementById("accordionSidebar");
     for (let page in dashboard_urls) {
       // noinspection JSBitwiseOperatorUsage
-      if (dashboard_names[page].requirement === 0 || userFlags & dashboard_names[page].requirement) {
+      if (
+        dashboard_names[page].requirement === 0 ||
+        userFlags & dashboard_names[page].requirement
+      ) {
         let main_node = document.createElement("li");
         main_node.className = "nav-item";
         let linkNode = document.createElement("a");
         linkNode.href = dashboard_urls[page];
         linkNode.className = `nav-link${
-            dashboard_urls[page] === window.location.pathname ? " active" : ""
+          dashboard_urls[page] === window.location.pathname ? " active" : ""
         }`;
         let iconNode = document.createElement("i");
         iconNode.className = dashboard_names[page]["className"];

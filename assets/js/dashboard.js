@@ -39,7 +39,6 @@ async function getUploadedFiles(page) {
   return req.json();
 }
 
-
 function loadData() {
   getUserData().then((data) => {
     if (data.error) {
@@ -115,7 +114,7 @@ function loadData() {
       while (a_box.firstChild) {
         a_box.removeChild(a_box.firstChild);
       }
-      data.forEach(item => {
+      data.forEach((item) => {
         let node = document.createElement("li");
         node.classList.add("activity-item", "list-group-item");
         let innerNode = document.createElement("div");
