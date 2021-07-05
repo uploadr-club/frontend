@@ -6,7 +6,7 @@
           name="viewport"
           content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
   />
-  <title>Dashboard - Uploadr.club</title>
+  <title>Admin Dashboard - Uploadr.club</title>
   <link
           rel="stylesheet"
           href="../assets/bootstrap/css/bootstrap.min.css?h=ed0f9fbe99ee9c4c4c6250bf0ab5396c"
@@ -31,7 +31,7 @@
           rel="stylesheet"
           href="../assets/css/styles.min.css?h=bb2db7521508fc7db3f11e7c02094a4a"
   />
-  <script defer src="../assets/js/dashboard.js"></script>
+  <script defer src="../assets/js/admin/dashboard.js"></script>
 </head>
 
 <body id="page-top" data-hidden="yes">
@@ -179,169 +179,6 @@
           <h3 class="text-dark mb-0">Dashboard</h3>
         </div>
         <div class="row">
-          <div class="col-md-6 col-xl-3 mb-4">
-            <div class="card shadow border-left-primary py-2">
-              <div class="card-body">
-                <div class="row align-items-center no-gutters">
-                  <div class="col mr-2">
-                    <div
-                            class="
-                            text-uppercase text-primary
-                            font-weight-bold
-                            text-xs
-                            mb-1
-                          "
-                    >
-                      <span>Files Uploaded</span>
-                    </div>
-                    <div class="text-dark font-weight-bold h5 mb-0">
-                      <span id="total_files">Loading...</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-xl-3 mb-4">
-            <div class="card shadow border-left-secondary py-2">
-              <div class="card-body">
-                <div class="row align-items-center no-gutters">
-                  <div class="col mr-2">
-                    <div
-                            class="
-                            text-uppercase text-secondary
-                            font-weight-bold
-                            text-xs
-                            mb-1
-                          "
-                    >
-                      <span>MOTD</span>
-                    </div>
-                    <div class="text-dark font-weight-bold h5 mb-0">
-                      <span id="motd">Loading...</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-xl-3 mb-4">
-            <div
-                    style="border-left: 0.25rem solid #5cb692 !important"
-                    class="card shadow py-2"
-            >
-              <div class="card-body">
-                <div class="row align-items-center no-gutters">
-                  <div class="col mr-2">
-                    <div
-                            style="color: #5cb692 !important"
-                            class="text-uppercase font-weight-bold text-xs mb-1"
-                    >
-                      <span>Discord Link</span>
-                    </div>
-                    <div class="text-dark font-weight-bold h5 mb-0">
-                      <button
-                              style="color: #5cb692 !important"
-                              disabled
-                              id="dLinkButton"
-                              class="btn btn-primary btn-block btn-user"
-                              onclick="window.open(`https://api.uploadr.club/api/v1/user/discord/link?token=${localStorage.getItem('token')}`)"
-                      >
-                        Discord Link
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-xl-3 mb-4">
-            <div class="card shadow border-left-warning py-2">
-              <div class="card-body">
-                <div class="row align-items-center no-gutters">
-                  <div class="col mr-2">
-                    <div
-                            class="
-                            text-uppercase text-warning
-                            font-weight-bold
-                            text-xs
-                            mb-1
-                          "
-                    >
-                      <span>Global File Views</span>
-                    </div>
-                    <div class="text-dark font-weight-bold h5 mb-0">
-                      <span id="gfv">Loading...></span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-xl-3 mb-4">
-            <div class="card shadow border-left-info py-2">
-              <div class="card-body">
-                <div class="row align-items-center no-gutters">
-                  <div class="col mr-2">
-                    <div
-                            class="
-                            text-uppercase text-info
-                            font-weight-bold
-                            text-xs
-                            mb-1
-                          "
-                    >
-                      <span>STORAGE USED</span>
-                    </div>
-                    <div class="row no-gutters align-items-center">
-                      <div class="col-auto">
-                        <div
-                                class="text-dark font-weight-bold h5 mb-0 mr-3"
-                        >
-                          <span id="storage_counter">Loading...</span>
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="progress progress-sm">
-                          <div
-                                  class="progress-bar w-50"
-                                  role="progressbar"
-                                  id="storage_bar"
-                                  aria-valuemin="0"
-                                  aria-valuemax="100"
-                                  aria-valuenow="10"
-                          ></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-6 col-xl-3 mb-4">
-            <div class="card shadow border-left-danger py-2">
-              <div class="card-body">
-                <div class="row align-items-center no-gutters">
-                  <div class="col mr-2">
-                    <div
-                            class="
-                            text-uppercase text-danger
-                            font-weight-bold
-                            text-xs
-                            mb-1
-                          "
-                    >
-                      <span>Version</span>
-                    </div>
-                    <div class="text-dark font-weight-bold h5 mb-0">
-                      <span id="version">Loading...</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
           <div class="col-md-6 col-xl-3 mb-4">
             <div class="card shadow border-left-danger py-2">
               <div class="card-body">
