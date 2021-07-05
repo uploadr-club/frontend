@@ -167,8 +167,6 @@ function dashAccordian(userFlags) {
   }
 }
 
-// dashAccordian();
-
 async function getUserData() {
   let headers = {
     Authorization: localStorage.getItem("token"),
@@ -192,6 +190,8 @@ function usernameDropdown() {
       } else {
         $("#usernameDropDownSpan")[0].innerHTML = data.user.username;
       }
+      let userFlags = data.user.flags;
+      dashAccordian(userFlags);
     });
 
     const uDropDown = document.getElementById("usernameDropDown");

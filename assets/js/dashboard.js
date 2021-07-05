@@ -46,7 +46,6 @@ function loadData() {
       $("#total_files")[0].innerText = data.error.description;
     } else {
       $("#total_files")[0].innerText = data.files;
-      let userFlags = data.user.flags;
       // noinspection JSUnresolvedVariable
       let psUsed = Math.round(
         (data.ufs.bytes_used /
@@ -75,7 +74,6 @@ function loadData() {
         $("#dLinkButton")[0].disabled = false;
         // $("#usernameDropDown")[0].innerHTML = data.user.username;
       }
-      dashAccordian(userFlags);
     }
   });
 

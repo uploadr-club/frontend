@@ -17,12 +17,10 @@ function loadData() {
             $(
                 "#userinfo"
             )[0].innerText = `UUID: ${data.user.uuid}\nFile Limit Enabled: ${data.ufs.enabled}`;
-            let userFlags = data.user.flags;
             // noinspection JSBitwiseOperatorUsage
             if (userFlags & 8 === 0 ) {
                 window.location = "/dash.html";  // redirect to dashboard if insufficient perms
             }
-            dashAccordian(userFlags);
         }
     });
 }
