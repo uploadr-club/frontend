@@ -1,7 +1,5 @@
 const darkSwitch = document.getElementById("darkSwitch");
 
-let userFlags = 0;
-
 function initTheme() {
   let e = "dark" === localStorage.getItem("darkSwitch");
   null === localStorage.getItem("darkSwitch") && (e = !0),
@@ -115,7 +113,7 @@ const dashboard_urls = [
   // "/auditlog.html"
 ];
 
-function dashAccordian() {
+function dashAccordian(userFlags) {
   let dashboard_names = [
     {
       name: "Dashboard",
@@ -143,7 +141,6 @@ function dashAccordian() {
     for (let page in dashboard_urls) {
       // noinspection JSBitwiseOperatorUsage
       if (dashboard_names[page].requirement === 0 || userFlags & dashboard_names[page].requirement) {
-
         let main_node = document.createElement("li");
         main_node.className = "nav-item";
         let linkNode = document.createElement("a");
@@ -164,7 +161,7 @@ function dashAccordian() {
   }
 }
 
-dashAccordian();
+// dashAccordian();
 
 async function getUserData() {
   let headers = {

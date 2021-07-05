@@ -17,11 +17,9 @@ function loadData() {
             $(
                 "#userinfo"
             )[0].innerText = `UUID: ${data.user.uuid}\nFile Limit Enabled: ${data.ufs.enabled}`;
-            userFlags = data.user.flags;
+            let userFlags = data.user.flags;
+            dashAccordian(userFlags);
         }
     });
-    dashAccordian();
-
-
 }
 loadData();
