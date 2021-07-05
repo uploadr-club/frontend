@@ -2,8 +2,8 @@ const darkSwitch = document.getElementById("darkSwitch");
 
 function initTheme() {
   let e = "dark" === localStorage.getItem("darkSwitch");
-  null === localStorage.getItem("darkSwitch") && (e = !0),
-    (darkSwitch.checked = e),
+  null === localStorage.getItem("darkSwitch") && (e = !0);
+    (darkSwitch.checked = e)
     e
       ? document.body.setAttribute("data-theme", "dark")
       : document.body.removeAttribute("data-theme");
@@ -11,18 +11,22 @@ function initTheme() {
 
 function resetTheme() {
   darkSwitch.checked
-    ? (document.body.setAttribute("data-theme", "dark"),
-      localStorage.setItem("darkSwitch", "dark"))
-    : (document.body.removeAttribute("data-theme"),
-      localStorage.setItem("darkSwitch", "light"));
+      ? (() => {
+        document.body.setAttribute("data-theme", "dark")
+        localStorage.setItem("darkSwitch", "dark");
+      })()
+      : (() => {
+        document.body.removeAttribute("data-theme")
+        localStorage.setItem("darkSwitch", "light")
+      })()
 }
-window.addEventListener("load", () => {
-  darkSwitch &&
-    (initTheme(),
-    darkSwitch.addEventListener("change", () => {
-      resetTheme();
-    }));
-}),
+window.addEventListener("load", (() => {
+  initTheme()
+  darkSwitch.addEventListener("change", () => {
+    resetTheme();
+  });
+}));
+
   (function (e) {
     "use strict";
     e("body.fixed-nav .sidebar").on(
@@ -31,28 +35,29 @@ window.addEventListener("load", () => {
         if (e(window).width() > 768) {
           var o = t.originalEvent,
             a = o.wheelDelta || -o.detail;
-          (this.scrollTop += 30 * (a < 0 ? 1 : -1)), t.preventDefault();
+          (this.scrollTop += 30 * (a < 0 ? 1 : -1))
+          t.preventDefault();
         }
       }
-    ),
-      e(document).on("scroll", function () {
-        e(this).scrollTop() > 100
+    )
+    e(document).on("scroll", function () {
+      e(this).scrollTop() > 100
           ? e(".scroll-to-top").fadeIn()
           : e(".scroll-to-top").fadeOut();
-      }),
-      e(document).on("click", "a.scroll-to-top", function (t) {
-        var o = e(this);
-        e("html, body")
+    })
+    e(document).on("click", "a.scroll-to-top", function (t) {
+      var o = e(this);
+      e("html, body")
           .stop()
           .animate(
-            {
-              scrollTop: e(o.attr("href")).offset().top,
-            },
-            1e3,
-            "easeInOutExpo"
-          ),
-          t.preventDefault();
-      });
+              {
+                scrollTop: e(o.attr("href")).offset().top,
+              },
+              1e3,
+              "easeInOutExpo"
+          )
+      t.preventDefault();
+    });
   })(jQuery);
 
 function reqHandler() {
@@ -134,7 +139,7 @@ function dashAccordian(userFlags) {
       name: "Admin Dashboard",
       className: "fas fa-toolbox",
       requirement: 8,
-    }
+    },
   ];
   if (dashboard_urls.indexOf(window.location.pathname) > -1) {
     let accordian = document.getElementById("accordionSidebar");
@@ -213,6 +218,9 @@ function usernameDropdown() {
 
     for (let catag in opts) {
       for (let item in opts[catag]) {
+        if (!opts[catag].hasOwnProperty(item)){
+          return;
+        }
         let itm = opts[catag][item];
         let node = document.createElement("a");
         node.className = "dropdown-item";
