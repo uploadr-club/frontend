@@ -39,7 +39,6 @@ async function getUploadedFiles(page) {
   return req.json();
 }
 
-
 function loadData() {
   getUserData().then((data) => {
     if (data.error) {
