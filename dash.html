@@ -1,238 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
+    <title>Dashboard - Uploadr.club</title>
+    <link
+      rel="stylesheet"
+      href="assets/bootstrap/css/bootstrap.min.css?h=ed0f9fbe99ee9c4c4c6250bf0ab5396c"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/fonts/fontawesome5-overrides.min.css?h=a436bee1e5ae414f98db7ca13adfd7c0"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/css/styles.min.css?h=bb2db7521508fc7db3f11e7c02094a4a"
+    />
+    <script defer src="assets/js/dashboard.js"></script>
+  </head>
 
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-	<title>Dashboard - Uploadr.club</title>
-	<link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=ed0f9fbe99ee9c4c4c6250bf0ab5396c">
-	<link rel="stylesheet"
-		href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css?h=a436bee1e5ae414f98db7ca13adfd7c0">
-	<link rel="stylesheet" href="assets/css/styles.min.css?h=bb2db7521508fc7db3f11e7c02094a4a">
-	<script defer src="assets/js/dashboard.js"></script>
-</head>
-
-<body id="page-top" data-hidden="yes">
-	<div id="wrapper">
-		<nav class="navbar navbar-dark align-items-start sidebar sidebar-dark accordion bg-gradient-primary p-0">
-			<div class="container-fluid d-flex flex-column p-0"><a
-					class="navbar-brand d-flex justify-content-center align-items-center sidebar-brand m-0" href="#">
-					<div class="sidebar-brand-icon rotate-n-15"><img alt="uploadr.club logo"
-							src="assets/img/logos/uploadr-logo-goyim.svg?h=b25cab0586ef382b73e5de4bc929da58"
-							style="width: 45px;height: 42px;"></div>
-					<div class="sidebar-brand-text mx-3"><span>Uploadr</span></div>
-				</a>
-				<hr class="sidebar-divider my-0">
-				<ul class="navbar-nav text-light" id="accordionSidebar">
-				</ul>
-				<div class="row" style="margin-top: 15px;">
-					<div class="col text-center d-flex justify-content-xl-center"><i
-							class="fas fa-sun d-xl-flex align-items-xl-center"
-							style="font-size: 24px;margin-right: 8px;"></i>
-						<div class="custom-control custom-switch"><input class="custom-control-input" type="checkbox"
-								id="darkSwitch" /><label class="custom-control-label" for="darkSwitch"></label></div><i
-							class="fas fa-moon d-xl-flex align-items-xl-center" style="font-size: 24px;"></i>
-					</div>
-				</div>
-
-			</div>
-		</nav>
-		<div class="d-flex flex-column" id="content-wrapper">
-			<div id="content">
-				<nav class="navbar navbar-light navbar-expand bg-white shadow mb-4 topbar static-top">
-					<div class="container-fluid"><button class="btn btn-link d-md-none rounded-circle mr-3"
-							id="sidebarToggleTop" type="button"><i class="fas fa-bars"></i></button>
-						<ul class="navbar-nav flex-nowrap ml-auto">
-							<li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link"
-									aria-expanded="false" data-toggle="dropdown" href="#"><i
-										class="fas fa-search"></i></a>
-								<div class="dropdown-menu dropdown-menu-right p-3 animated--grow-in"
-									aria-labelledby="searchDropdown">
-									<form class="form-inline mr-auto navbar-search w-100">
-										<div class="input-group"><label>
-												<input class="bg-light form-control border-0 small" type="text"
-													placeholder="Search for ...">
-											</label>
-											<div class="input-group-append"><button class="btn btn-primary py-0"
-													type="button"><i class="fas fa-search"></i></button></div>
-										</div>
-									</form>
-								</div>
-							</li>
-							<li class="nav-item dropdown no-arrow">
-								<div class="nav-item dropdown no-arrow"><a class="dropdown-toggle nav-link"
-										aria-expanded="false" data-toggle="dropdown" href="#"><span
-											class="d-none d-lg-inline mr-2 text-gray-600 small" id="usernameDropDownSpan">Loading...</span></a>
-									<div id="usernameDropDown" class="dropdown-menu shadow dropdown-menu-right animated--grow-in">
-									</div>
-								</div>
-							</li>
-						</ul>
-					</div>
-				</nav>
-				<div class="container-fluid">
-					<div class="d-sm-flex justify-content-between align-items-center mb-4">
-						<h3 class="text-dark mb-0">Dashboard</h3>
-					</div>
-					<div class="row">
-						<div class="col-md-6 col-xl-3 mb-4">
-							<div class="card shadow border-left-primary py-2">
-								<div class="card-body">
-									<div class="row align-items-center no-gutters">
-										<div class="col mr-2">
-											<div class="text-uppercase text-primary font-weight-bold text-xs mb-1">
-												<span>Files Uploaded</span></div>
-											<div class="text-dark font-weight-bold h5 mb-0">
-												<span id="total_files">Loading...</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-xl-3 mb-4">
-							<div class="card shadow border-left-secondary py-2">
-								<div class="card-body">
-									<div class="row align-items-center no-gutters">
-										<div class="col mr-2">
-											<div class="text-uppercase text-secondary font-weight-bold text-xs mb-1">
-												<span>MOTD</span></div>
-											<div class="text-dark font-weight-bold h5 mb-0">
-												<span id="motd">Loading...</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-xl-3 mb-4">
-							<div style="border-left:.25rem solid #5cb692!important" class="card shadow py-2">
-								<div class="card-body">
-									<div class="row align-items-center no-gutters">
-										<div class="col mr-2">
-											<div style="color: #5cb692!important;" class="text-uppercase font-weight-bold text-xs mb-1">
-												<span>Discord Link</span></div>
-											<div class="text-dark font-weight-bold h5 mb-0">
-												<button style="color: #5cb692!important;" disabled id="dLinkButton" class="btn btn-primary btn-block btn-user" onclick="window.open(`https://api.uploadr.club/api/v1/user/discord/link?token=${localStorage.getItem('token')}`)">Discord Link</button>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-xl-3 mb-4">
-							<div class="card shadow border-left-warning py-2">
-								<div class="card-body">
-									<div class="row align-items-center no-gutters">
-										<div class="col mr-2">
-											<div class="text-uppercase text-warning font-weight-bold text-xs mb-1">
-												<span>Global File Views</span></div>
-											<div class="text-dark font-weight-bold h5 mb-0">
-												<span id="gfv">Loading...></span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-xl-3 mb-4">
-							<div class="card shadow border-left-info py-2">
-								<div class="card-body">
-									<div class="row align-items-center no-gutters">
-										<div class="col mr-2">
-											<div class="text-uppercase text-info font-weight-bold text-xs mb-1">
-												<span>STORAGE USED</span>
-											</div>
-											<div class="row no-gutters align-items-center">
-												<div class="col-auto">
-													<div class="text-dark font-weight-bold h5 mb-0 mr-3">
-														<span id="storage_counter">Loading...</span>
-													</div>
-												</div>
-												<div class="col">
-													<div class="progress progress-sm">
-														<div class="progress-bar w-50" role="progressbar" id="storage_bar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="10"></div>
-													</div>
-												</div>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-xl-3 mb-4">
-							<div class="card shadow border-left-danger py-2">
-								<div class="card-body">
-									<div class="row align-items-center no-gutters">
-										<div class="col mr-2">
-											<div class="text-uppercase text-danger font-weight-bold text-xs mb-1">
-												<span>Version</span></div>
-											<div class="text-dark font-weight-bold h5 mb-0">
-												<span id="version">Loading...</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-6 col-xl-3 mb-4">
-							<div class="card shadow border-left-danger py-2">
-								<div class="card-body">
-									<div class="row align-items-center no-gutters">
-										<div class="col mr-2">
-											<div class="text-uppercase text-danger font-weight-bold text-xs mb-1">
-												<span>User Info</span></div>
-											<div class="text-dark font-weight-bold h5 mb-0">
-												<span id="userinfo">Loading...</span>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="row">
-						<div class="col-lg-6 mb-4">
-							<div class="card shadow mb-4"></div>
-							<div class="card shadow mb-4">
-								<div class="card-header py-3">
-									<h6 class="text-primary font-weight-bold m-0">Recent Uploads<a id="ada"
-											class="float-lg-right" onclick="toggleActDrop()"><i
-												class="fas fa-angle-down" aria-hidden="true"></i></a></h6>
-								</div>
-								<ul id="activBox" class="list-group list-group-flush">
-								</ul>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<footer class="bg-white sticky-footer">
-				<div class="container my-auto">
-					<div class="text-center my-auto copyright"><span>Copyright © Uploadr.club 2021</span></div>
-				</div>
-			</footer>
-		</div><a class="border rounded d-inline scroll-to-top" href="#page-top"><i class="fas fa-angle-up"></i></a>
-	</div>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
-	<script src="assets/js/script.js?h=1e4be2044492a6ec5dc404d03b20a15b"></script>
-	<script>
-		function toggleActDrop() {
-			let ihc = $('#ada');
-			if (ihc.children()[0].className === 'fas fa-angle-down') {
-				ihc.children()[0].className = "fas fa-angle-up";
-				document.body.setAttribute("data-hidden", "no");
-			} else {
-				ihc.children()[0].className = "fas fa-angle-down";
-				document.body.setAttribute("data-hidden", "yes");
-			}
-		}
-	</script>
-</body>
-
+  <body id="page-top" data-hidden="yes">
+    <div id="wrapper">
+      <nav
+        class="
+          navbar navbar-dark
+          align-items-start
+          sidebar sidebar-dark
+          accordion
+          bg-gradient-primary
+          p-0
+        "
+      >
+        <div class="container-fluid d-flex flex-column p-0">
+          <a
+            class="
+              navbar-brand
+              d-flex
+              justify-content-center
+              align-items-center
+              sidebar-brand
+              m-0
+            "
+            href="#"
+          >
+            <div class="sidebar-brand-icon rotate-n-15">
+              <img
+                alt="uploadr.club logo"
+                src="assets/img/logos/uploadr-logo-goyim.svg?h=b25cab0586ef382b73e5de4bc929da58"
+                style="width: 45px; height: 42px"
+              />
+            </div>
+            <div class="sidebar-brand-text mx-3"><span>Uploadr</span></div>
+          </a>
+          <hr class="sidebar-divider my-0" />
+          <ul class="navbar-nav text-light" id="accordionSidebar"></ul>
+          <div class="row" style="margin-top: 15px">
+            <div class="col text-center d-flex justify-content-xl-center">
+              <i
+                class="fas fa-sun d-xl-flex align-items-xl-center"
+                style="font-size: 24px; margin-right: 8px"
+              ></i>
+              <div class="custom-control custom-switch">
+                <input
+                  class="custom-control-input"
+                  type="checkbox"
+                  id="darkSwitch"
+                /><label class="custom-control-label" for="darkSwitch"></label>
+              </div>
+              <i
+                class="fas fa-moon d-xl-flex align-items-xl-center"
+                style="font-size: 24px"
+              ></i>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="d-flex flex-column" id="content-wrapper">
+        <div id="content">
+          <nav
+            class="
+              navbar navbar-light navbar-expand
+              bg-white
+              shadow
+              mb-4
+              topbar
+              static-top
+            "
+          >
+            <div class="container-fluid">
+              <button
+                class="btn btn-link d-md-none rounded-circle mr-3"
+                id="sidebarToggleTop"
+                type="button"
+              >
+                <i class="fas fa-bars"></i>
+              </button>
+              <ul class="navbar-nav flex-nowrap ml-auto">
+                <li class="nav-item dropdown d-sm-none no-arrow">
+                  <a
+                    class="dropdown-toggle nav-link"
+                    aria-expanded="false"
+                    data-toggle="dropdown"
+                    href="#"
+                    ><i class="fas fa-search"></i
+                  ></a>
+                  <div
+                    class="
+                      dropdown-menu dropdown-menu-right
+                      p-3
+                      animated--grow-in
+                    "
+                    aria-labelledby="searchDropdown"
+                  >
+                    <form class="form-inline mr-auto navbar-search w-100">
+                      <div class="input-group">
+                        <label>
+                          <input
+                            class="bg-light form-control border-0 small"
+                            type="text"
+                            placeholder="Search for ..."
+                          />
+                        </label>
+                        <div class="input-group-append">
+                          <button class="btn btn-primary py-0" type="button">
+                            <i class="fas fa-search"></i>
+                          </button>
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                </li>
+                <li class="nav-item dropdown no-arrow">
+                  <div class="nav-item dropdown no-arrow">
+                    <a
+                      class="dropdown-toggle nav-link"
+                      aria-expanded="false"
+                      data-toggle="dropdown"
+                      href="#"
+                      ><span
+                        class="d-none d-lg-inline mr-2 text-gray-600 small"
+                        id="usernameDropDownSpan"
+                        >Loading...</span
+                      ></a
+                    >
+                    <div
+                      id="usernameDropDown"
+                      class="
+                        dropdown-menu
+                        shadow
+                        dropdown-menu-right
+                        animated--grow-in
+                      "
+                    ></div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <div class="container-fluid">
+            <div
+              class="d-sm-flex justify-content-between align-items-center mb-4"
+            >
+              <h3 class="text-dark mb-0">Dashboard</h3>
+            </div>
+            <div class="row">
+              <div class="col-md-6 col-xl-3 mb-4">
+                <div class="card shadow border-left-primary py-2">
+                  <div class="card-body">
+                    <div class="row align-items-center no-gutters">
+                      <div class="col mr-2">
+                        <div
+                          class="
+                            text-uppercase text-primary
+                            font-weight-bold
+                            text-xs
+                            mb-1
+                          "
+                        >
+                          <span>Files Uploaded</span>
+                        </div>
+                        <div class="text-dark font-weight-bold h5 mb-0">
+                          <span id="total_files">Loading...</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-3 mb-4">
+                <div class="card shadow border-left-secondary py-2">
+                  <div class="card-body">
+                    <div class="row align-items-center no-gutters">
+                      <div class="col mr-2">
+                        <div
+                          class="
+                            text-uppercase text-secondary
+                            font-weight-bold
+                            text-xs
+                            mb-1
+                          "
+                        >
+                          <span>MOTD</span>
+                        </div>
+                        <div class="text-dark font-weight-bold h5 mb-0">
+                          <span id="motd">Loading...</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-3 mb-4">
+                <div
+                  style="border-left: 0.25rem solid #5cb692 !important"
+                  class="card shadow py-2"
+                >
+                  <div class="card-body">
+                    <div class="row align-items-center no-gutters">
+                      <div class="col mr-2">
+                        <div
+                          style="color: #5cb692 !important"
+                          class="text-uppercase font-weight-bold text-xs mb-1"
+                        >
+                          <span>Discord Link</span>
+                        </div>
+                        <div class="text-dark font-weight-bold h5 mb-0">
+                          <button
+                            style="color: #5cb692 !important"
+                            disabled
+                            id="dLinkButton"
+                            class="btn btn-primary btn-block btn-user"
+                            onclick="window.open(`https://api.uploadr.club/api/v1/user/discord/link?token=${localStorage.getItem('token')}`)"
+                          >
+                            Discord Link
+                          </button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-3 mb-4">
+                <div class="card shadow border-left-warning py-2">
+                  <div class="card-body">
+                    <div class="row align-items-center no-gutters">
+                      <div class="col mr-2">
+                        <div
+                          class="
+                            text-uppercase text-warning
+                            font-weight-bold
+                            text-xs
+                            mb-1
+                          "
+                        >
+                          <span>Global File Views</span>
+                        </div>
+                        <div class="text-dark font-weight-bold h5 mb-0">
+                          <span id="gfv">Loading...></span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-3 mb-4">
+                <div class="card shadow border-left-info py-2">
+                  <div class="card-body">
+                    <div class="row align-items-center no-gutters">
+                      <div class="col mr-2">
+                        <div
+                          class="
+                            text-uppercase text-info
+                            font-weight-bold
+                            text-xs
+                            mb-1
+                          "
+                        >
+                          <span>STORAGE USED</span>
+                        </div>
+                        <div class="row no-gutters align-items-center">
+                          <div class="col-auto">
+                            <div
+                              class="text-dark font-weight-bold h5 mb-0 mr-3"
+                            >
+                              <span id="storage_counter">Loading...</span>
+                            </div>
+                          </div>
+                          <div class="col">
+                            <div class="progress progress-sm">
+                              <div
+                                class="progress-bar w-50"
+                                role="progressbar"
+                                id="storage_bar"
+                                aria-valuemin="0"
+                                aria-valuemax="100"
+                                aria-valuenow="10"
+                              ></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-3 mb-4">
+                <div class="card shadow border-left-danger py-2">
+                  <div class="card-body">
+                    <div class="row align-items-center no-gutters">
+                      <div class="col mr-2">
+                        <div
+                          class="
+                            text-uppercase text-danger
+                            font-weight-bold
+                            text-xs
+                            mb-1
+                          "
+                        >
+                          <span>Version</span>
+                        </div>
+                        <div class="text-dark font-weight-bold h5 mb-0">
+                          <span id="version">Loading...</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-6 col-xl-3 mb-4">
+                <div class="card shadow border-left-danger py-2">
+                  <div class="card-body">
+                    <div class="row align-items-center no-gutters">
+                      <div class="col mr-2">
+                        <div
+                          class="
+                            text-uppercase text-danger
+                            font-weight-bold
+                            text-xs
+                            mb-1
+                          "
+                        >
+                          <span>User Info</span>
+                        </div>
+                        <div class="text-dark font-weight-bold h5 mb-0">
+                          <span id="userinfo">Loading...</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-lg-6 mb-4">
+                <div class="card shadow mb-4"></div>
+                <div class="card shadow mb-4">
+                  <div class="card-header py-3">
+                    <h6 class="text-primary font-weight-bold m-0">
+                      Recent Uploads<a
+                        id="ada"
+                        class="float-lg-right"
+                        onclick="toggleActDrop()"
+                        ><i class="fas fa-angle-down" aria-hidden="true"></i
+                      ></a>
+                    </h6>
+                  </div>
+                  <ul id="activBox" class="list-group list-group-flush"></ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <footer class="bg-white sticky-footer">
+          <div class="container my-auto">
+            <div class="text-center my-auto copyright">
+              <span>Copyright © Uploadr.club 2021</span>
+            </div>
+          </div>
+        </footer>
+      </div>
+      <a class="border rounded d-inline scroll-to-top" href="#page-top"
+        ><i class="fas fa-angle-up"></i
+      ></a>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+    <script src="assets/js/script.js?h=1e4be2044492a6ec5dc404d03b20a15b"></script>
+    <script>
+      function toggleActDrop() {
+        let ihc = $("#ada");
+        if (ihc.children()[0].className === "fas fa-angle-down") {
+          ihc.children()[0].className = "fas fa-angle-up";
+          document.body.setAttribute("data-hidden", "no");
+        } else {
+          ihc.children()[0].className = "fas fa-angle-down";
+          document.body.setAttribute("data-hidden", "yes");
+        }
+      }
+    </script>
+  </body>
 </html>
