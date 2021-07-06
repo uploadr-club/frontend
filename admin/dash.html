@@ -227,22 +227,37 @@
               </div>
             </div>
             <div class="row">
-              <!--          <div class="col-lg-6 mb-4">-->
-              <!--            <div class="card shadow mb-4"></div>-->
-              <!--            <div class="card shadow mb-4">-->
-              <!--              <div class="card-header py-3">-->
-              <!--                <h6 class="text-primary font-weight-bold m-0">-->
-              <!--                  Recent Uploads<a-->
-              <!--                        id="ada"-->
-              <!--                        class="float-lg-right"-->
-              <!--                        onclick="toggleActDrop()"-->
-              <!--                ><i class="fas fa-angle-down" aria-hidden="true"></i-->
-              <!--                ></a>-->
-              <!--                </h6>-->
-              <!--              </div>-->
-              <!--              <ul id="activBox" class="list-group list-group-flush"></ul>-->
-              <!--            </div>-->
-              <!--          </div>-->
+              <div class="col-lg-6 mb-4">
+                <div class="card shadow mb-4">
+                  <div class="card-header py-3">
+                    <h6 class="text-primary font-weight-bold m-0">
+                      Pages
+                    </h6>
+                  </div>
+                  <ul id="activBox" class="list-group list-group-flush">
+                    <li class="list-group-item">
+                      <div class="row align-items-center no-gutters">
+                        <div class="col mr-2">
+                          <h6>
+                            <strong>
+                              Search
+                            </strong>
+                          </h6>
+                          <button class="btn btn-primary btn-sm d-none d-sm-inline-block" onclick="window.location = '/admin/search/name.html'">
+                            Search Users By Name
+                          </button>
+                          <button class="btn btn-primary btn-sm d-none d-sm-inline-block" onclick="window.location = '/admin/search/id.html'">
+                            Search Users By ID
+                          </button>
+                          <button class="btn btn-primary btn-sm d-none d-sm-inline-block" onclick="window.location = '/admin/search/discord_id.html'">
+                            Search Users By Discord ID
+                          </button>
+                        </div>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -263,17 +278,5 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="../assets/js/script.js?h=1e4be2044492a6ec5dc404d03b20a15b"></script>
     <script src="../assets/js/admin/script.js?h=1e4be2044492a6ec5dc404d03b20a15b"></script>
-    <script>
-      function toggleActDrop() {
-        let ihc = $("#ada");
-        if (ihc.children()[0].className === "fas fa-angle-down") {
-          ihc.children()[0].className = "fas fa-angle-up";
-          document.body.setAttribute("data-hidden", "no");
-        } else {
-          ihc.children()[0].className = "fas fa-angle-down";
-          document.body.setAttribute("data-hidden", "yes");
-        }
-      }
-    </script>
   </body>
 </html>
