@@ -116,6 +116,9 @@ const dashboard_urls = [
   "/profile.html",
   "/files.html",
   "/admin/dash.html",
+  "/admin/search/id.html",
+  "/admin/search/name.html",
+  "/admin/search/discord_id.html"
   // "/auditlog.html"
 ];
 
@@ -125,28 +128,44 @@ function dashAccordian(userFlags) {
       name: "Dashboard",
       className: "fas fa-tachometer-alt",
       requirement: 0,
+      hidden: false,
     },
     {
       name: "Profile",
       className: "fas fa-user",
       requirement: 0,
+      hidden: false,
     },
     {
       name: "Files",
       className: "fas fa-table",
       requirement: 0,
+      hidden: false
     },
     {
       name: "Admin Dashboard",
       className: "fas fa-toolbox",
       requirement: 8,
+      hidden: false,
     },
+    {
+      hidden: true,
+    },
+    {
+      hidden: true,
+    },
+    {
+      hidden: true,
+    }
   ];
   if (dashboard_urls.indexOf(window.location.pathname) > -1) {
     let accordian = document.getElementById("accordionSidebar");
     for (let page in dashboard_urls) {
       // noinspection JSBitwiseOperatorUsage
-      if (dashboard_names[page].requirement === 0 || userFlags & dashboard_names[page].requirement) {
+      if (dashboard_names[page]["hidden"] === true) {
+        continue;
+      }
+      if (dashboard_names[page]["requirement"] === 0 || userFlags & dashboard_names[page]["requirement"]) {
         let main_node = document.createElement("li");
         main_node.className = "nav-item";
         let linkNode = document.createElement("a");

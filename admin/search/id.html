@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+  />
+  <title>Search Users By ID - Uploadr.club</title>
+  <link
+          rel="stylesheet"
+          href="../../assets/bootstrap/css/bootstrap.min.css?h=ed0f9fbe99ee9c4c4c6250bf0ab5396c"
+  />
+  <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+  />
+  <link
+          rel="stylesheet"
+          href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"
+  />
+  <link
+          rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <link
+          rel="stylesheet"
+          href="../../assets/fonts/fontawesome5-overrides.min.css?h=a436bee1e5ae414f98db7ca13adfd7c0"
+  />
+  <link
+          rel="stylesheet"
+          href="../../assets/css/styles.min.css?h=bb2db7521508fc7db3f11e7c02094a4a"
+  />
+  <script defer src="../../assets/js/admin/dashboard.js"></script>
+</head>
+
+<body id="page-top" data-hidden="yes">
+<div id="wrapper">
+  <nav
+          class="
+          navbar navbar-dark
+          align-items-start
+          sidebar sidebar-dark
+          accordion
+          bg-gradient-primary
+          p-0
+        "
+  >
+    <div class="container-fluid d-flex flex-column p-0">
+      <a
+              class="
+              navbar-brand
+              d-flex
+              justify-content-center
+              align-items-center
+              sidebar-brand
+              m-0
+            "
+              href="#"
+      >
+        <div class="sidebar-brand-icon rotate-n-15">
+          <img
+                  alt="uploadr.club logo"
+                  src="../../assets/img/logos/uploadr-logo-goyim.svg?h=b25cab0586ef382b73e5de4bc929da58"
+                  style="width: 45px; height: 42px"
+          />
+        </div>
+        <div class="sidebar-brand-text mx-3"><span>Uploadr</span></div>
+      </a>
+      <hr class="sidebar-divider my-0" />
+      <ul class="navbar-nav text-light" id="accordionSidebar"></ul>
+      <div class="row" style="margin-top: 15px">
+        <div class="col text-center d-flex justify-content-xl-center">
+          <i
+                  class="fas fa-sun d-xl-flex align-items-xl-center"
+                  style="font-size: 24px; margin-right: 8px"
+          ></i>
+          <div class="custom-control custom-switch">
+            <input
+                    class="custom-control-input"
+                    type="checkbox"
+                    id="darkSwitch"
+            /><label class="custom-control-label" for="darkSwitch"></label>
+          </div>
+          <i
+                  class="fas fa-moon d-xl-flex align-items-xl-center"
+                  style="font-size: 24px"
+          ></i>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="d-flex flex-column" id="content-wrapper">
+    <div id="content">
+      <nav
+              class="
+              navbar navbar-light navbar-expand
+              bg-white
+              shadow
+              mb-4
+              topbar
+              static-top
+            "
+      >
+        <div class="container-fluid">
+          <button
+                  class="btn btn-link d-md-none rounded-circle mr-3"
+                  id="sidebarToggleTop"
+                  type="button"
+          >
+            <i class="fas fa-bars"></i>
+          </button>
+          <ul class="navbar-nav flex-nowrap ml-auto">
+            <li class="nav-item dropdown d-sm-none no-arrow">
+              <a
+                      class="dropdown-toggle nav-link"
+                      aria-expanded="false"
+                      data-toggle="dropdown"
+                      href="#"
+              ><i class="fas fa-search"></i
+              ></a>
+              <div
+                      class="
+                      dropdown-menu dropdown-menu-right
+                      p-3
+                      animated--grow-in
+                    "
+                      aria-labelledby="searchDropdown"
+              >
+                <form class="form-inline mr-auto navbar-search w-100">
+                  <div class="input-group">
+                    <label>
+                      <input
+                              class="bg-light form-control border-0 small"
+                              type="text"
+                              placeholder="Search for ..."
+                      />
+                    </label>
+                    <div class="input-group-append">
+                      <button class="btn btn-primary py-0" type="button">
+                        <i class="fas fa-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </li>
+            <li class="nav-item dropdown no-arrow">
+              <div class="nav-item dropdown no-arrow">
+                <a
+                        class="dropdown-toggle nav-link"
+                        aria-expanded="false"
+                        data-toggle="dropdown"
+                        href="#"
+                ><span
+                        class="d-none d-lg-inline mr-2 text-gray-600 small"
+                        id="usernameDropDownSpan"
+                >Loading...</span
+                ></a
+                >
+                <div
+                        id="usernameDropDown"
+                        class="
+                        dropdown-menu
+                        shadow
+                        dropdown-menu-right
+                        animated--grow-in
+                      "
+                ></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </nav>
+      <div class="container-fluid">
+        <div
+                class="d-sm-flex justify-content-between align-items-center mb-4"
+        >
+          <h3 class="text-dark mb-0">Search Users by ID</h3>
+        </div>
+        
+      </div>
+    </div>
+    <footer class="bg-white sticky-footer">
+      <div class="container my-auto">
+        <div class="text-center my-auto copyright">
+          <span>Copyright © Uploadr.club 2021</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <a class="border rounded d-inline scroll-to-top" href="#page-top"
+  ><i class="fas fa-angle-up"></i
+  ></a>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+<script src="../../assets/js/script.js?h=1e4be2044492a6ec5dc404d03b20a15b"></script>
+<script src="../../assets/js/admin/script.js?h=1e4be2044492a6ec5dc404d03b20a15b"></script>
+</body>
+</html>
