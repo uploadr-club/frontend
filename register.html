@@ -52,17 +52,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets/js/script.js?h=1e4be2044492a6ec5dc404d03b20a15b"></script>
-    <script>
-        function validateForm() {
-          var invite_code = document.forms["registerForm"]["invite"].value;
-          const uuid_regex = /[a-f0-9]{8}-?[a-f0-9]{4}-?4[a-f0-9]{3}-?[89ab][a-f0-9]{3}-?[a-f0-9]{12}/;
-          if (invite_code.match(uuid_regex)) {
-              return true;
-          }
-          document.forms["registerForm"]["invite"].value = "Invalid Invite Code";
-          return false;
-        }
-    </script>
 </body>
 
 </html>
