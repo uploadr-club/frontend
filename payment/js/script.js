@@ -168,7 +168,8 @@ function createSubscription(customerId, paymentMethodId) {
         },
         body: JSON.stringify({
             customerId: customerId,
-            paymentMethodId: paymentMethodId
+            paymentMethodId: paymentMethodId,
+            priceName: localStorage.getItem("plan")
         })
     })
         .then(function(response) {
