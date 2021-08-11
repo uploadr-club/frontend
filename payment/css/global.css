@@ -23,7 +23,7 @@ body {
     font-size: 16px;
     color: var(--body-color);
     -webkit-font-smoothing: antialiased;
-    background-color: #4037f1;
+    background-color: rgb(226, 232, 240);
 }
 h1,
 h2,
@@ -417,7 +417,7 @@ pre {
     animation: 0.4s field-in;
     animation-fill-mode: both;
     animation-timing-function: ease;
-    transform-origin: 50% 0%;
+    transform-origin: 50% 0;
 }
 
 .sr-form .sr-form-row:nth-child(1) {
@@ -486,14 +486,14 @@ pre {
     color: rgb(166, 166, 166);
     font-size: 20px;
     font-weight: 500;
-    letter-spacing: 0px;
+    letter-spacing: 0;
 }
 
 .sr-plan-text {
     color: rgb(153, 153, 153);
     font-size: 12px;
     font-weight: 500;
-    letter-spacing: 0px;
+    letter-spacing: 0;
     line-height: 14px;
 }
 
