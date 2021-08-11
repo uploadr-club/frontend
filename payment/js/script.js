@@ -165,7 +165,7 @@ function createSubscription(customerId, paymentMethodId) {
         method: "post",
         headers: {
             "Content-type": "application/json",
-            "Authorization": localStorage.getitem("token")
+            "Authorization": localStorage.getItem("token")
         },
         body: JSON.stringify({
             customerId: customerId,
