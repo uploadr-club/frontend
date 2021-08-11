@@ -23,6 +23,7 @@ body {
     font-size: 16px;
     color: var(--body-color);
     -webkit-font-smoothing: antialiased;
+    background-color: #4037f1;
 }
 h1,
 h2,
