@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="utf-8" />
     <title>Uploadr billing portal</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,77 +10,79 @@
     <link rel="stylesheet" href="css/global.css" />
     <script src="https://js.stripe.com/v3/"></script>
     <script src="js/script.js" defer></script>
-</head>
+  </head>
 
-<body>
-<div class="sr-root">
-    <div class="sr-main">
+  <body>
+    <div class="sr-root">
+      <div class="sr-main">
         <header class="sr-header">
-            <div class="sr-header__logo"></div>
+          <div class="sr-header__logo"></div>
         </header>
         <div class="sr-payment-summary sr-form">
-            <h1 class="order-amount">Loading...</h1>
-            <h4>Subscribe to Uploadr Premium</h4>
-            <h5 id="errorDisplay" hidden></h5>
+          <h1 class="order-amount">Loading...</h1>
+          <h4>Subscribe to Uploadr Premium</h4>
+          <h5 id="errorDisplay" hidden></h5>
         </div>
         <div id="signup-view" class="sr-form">
-            <form id="signup-form">
-                <div class="sr-form-row">
-                    <div class="sr-combo-inputs">
-                        <input
-                                id="name"
-                                placeholder="John Smith"
-                                class="sr-input"
-                                required
-                        />
-                        <input
-                                type="email"
-                                id="email"
-                                placeholder="john.smith@uploadr.club"
-                                class="sr-input"
-                                required
-                        />
-                    </div>
-                </div>
-                <button type="submit">Continue</button>
-            </form>
+          <form id="signup-form">
+            <div class="sr-form-row">
+              <div class="sr-combo-inputs">
+                <input
+                  id="name"
+                  placeholder="John Smith"
+                  class="sr-input"
+                  required
+                />
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="john.smith@uploadr.club"
+                  class="sr-input"
+                  required
+                />
+              </div>
+            </div>
+            <button type="submit">Continue</button>
+          </form>
         </div>
         <div id="payment-view" class="sr-form hidden">
-            <form id="payment-form">
-                <nav id="payment-methods" class="sr-form-row">
-                    <ul>
-                        <li class="visible">
-                            <input
-                                    type="radio"
-                                    name="payment"
-                                    id="payment-card"
-                                    value="card"
-                                    checked
-                            />
-                            <label for="payment-card">Card</label>
-                        </li>
-                    </ul>
-                </nav>
-                <div class="sr-form-row payment-info card visible">
-                    <div class="sr-combo-inputs">
-                        <div class="sr-combo-inputs-row">
-                            <div class="sr-input sr-element" id="card-element"></div>
-                        </div>
-                    </div>
+          <form id="payment-form">
+            <nav id="payment-methods" class="sr-form-row">
+              <ul>
+                <li class="visible">
+                  <input
+                    type="radio"
+                    name="payment"
+                    id="payment-card"
+                    value="card"
+                    checked
+                  />
+                  <label for="payment-card">Card</label>
+                </li>
+              </ul>
+            </nav>
+            <div class="sr-form-row payment-info card visible">
+              <div class="sr-combo-inputs">
+                <div class="sr-combo-inputs-row">
+                  <div class="sr-input sr-element" id="card-element"></div>
                 </div>
-                <div id="error-message" class="sr-field-error" role="alert"></div>
-                <button type="submit">
-                    <div id="spinner" class="hidden"></div>
-                    <span id="button-text">Subscribe</span>
-                </button>
-            </form>
+              </div>
+            </div>
+            <div id="error-message" class="sr-field-error" role="alert"></div>
+            <button type="submit">
+              <div id="spinner" class="hidden"></div>
+              <span id="button-text">Subscribe</span>
+            </button>
+          </form>
         </div>
         <div class="sr-payment-summary hidden completed-view">
-            <h1>Your subscription is <span class="order-status"></span>. Click <a href="/dash.html">Here</a> to go back.</h1>
+          <h1>
+            Your subscription is <span class="order-status"></span>. Click
+            <a href="/dash.html">Here</a> to go back.
+          </h1>
         </div>
+      </div>
+      <div class="sr-content"></div>
     </div>
-    <div class="sr-content">
-    </div>
-</div>
-</body>
+  </body>
 </html>
