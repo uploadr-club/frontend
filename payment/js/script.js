@@ -164,7 +164,8 @@ function createSubscription(customerId, paymentMethodId) {
     return fetch("https://api.uploadr.club/api/v1/billing/v1/subscription", {
         method: "post",
         headers: {
-            "Content-type": "application/json"
+            "Content-type": "application/json",
+            "Authorization": localStorage.getitem("token")
         },
         body: JSON.stringify({
             customerId: customerId,
