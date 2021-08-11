@@ -32,7 +32,28 @@ function checkIfLoggedIn() {
 
 }
 
+function getSubscription() {
+    return fetch("https://api.uploadr.club/api/v1/billing/v1/subscription", {
+        method: "get",
+        headers: {
+            Authorization: localStorage.getItem("token")
+        },
+    })
+}
+
 checkIfLoggedIn()
+getSubscription().then(req => {
+    if (req.ok) {
+        changeLoadingState(false);
+        document.querySelectorAll(".sr-form").forEach(function(view) {
+            view.classList.add("hidden");
+        });
+        document.querySelectorAll(".completed-view").forEach(function(view) {
+            view.classList.remove("hidden");
+        });
+        document.querySelector(".order-status").textContent = "already active";
+    }
+})
 
 var stripeElements = function(publishableKey) {
     stripe = Stripe(publishableKey,);
@@ -233,6 +254,7 @@ getConfig();
 
 var orderComplete = function(subscription) {
     changeLoadingState(false);
+    // noinspection JSUnusedLocalSymbols
     var subscriptionJson = JSON.stringify(subscription, null, 2);
     document.querySelectorAll(".sr-form").forEach(function(view) {
         view.classList.add("hidden");
