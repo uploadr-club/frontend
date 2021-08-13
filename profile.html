@@ -38,7 +38,9 @@
                             <li class="nav-item dropdown d-sm-none no-arrow"><a class="dropdown-toggle nav-link" aria-expanded="false" data-toggle="dropdown" href="#"><i class="fas fa-search"></i></a>
                                 <div class="dropdown-menu dropdown-menu-right p-3 animated--grow-in" aria-labelledby="searchDropdown">
                                     <form class="form-inline mr-auto navbar-search w-100">
-                                        <div class="input-group"><input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
+                                        <div class="input-group"><label>
+                                            <input class="bg-light form-control border-0 small" type="text" placeholder="Search for ...">
+                                        </label>
                                             <div class="input-group-append"><button class="btn btn-primary py-0" type="button"><i class="fas fa-search"></i></button></div>
                                         </div>
                                     </form>
@@ -118,7 +120,7 @@
                                                     <p><code>{file:storage_location}</code> the file storage location</p>
                                                     <p><code>{user:uuid}</code> the user uuid</p>
                                                     <p><code>{file:datetime}</code> the date and time of the file in the same format as <code>{datetime}</code></p>
-                                                    <p><code>{file:discord_timeFrom}</code> discord time handlers [MAY NOT WORK]</p>
+                                                    <p><code>{file:discord_timeFrom}</code> discord time localization [MAY NOT WORK]</p>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="webhook_url"><strong>Webhook URL</strong><br></label><input class="form-control" type="text" id="webhook_url"
