@@ -35,6 +35,24 @@ function loadData() {
         $("#embedProviderURL")[0].value = data.embed.provider_url;
         anc.value = data.embed.author_name;
         $("#authorURL")[0].value = data.embed.author_url;
+
+        let filenameGroup = $("#filename")[0];
+
+        let applicableItems = {
+            zwc: "Invisible URL",
+            id: "Normal URL",
+            short_8: "8 Character Short URL",
+            short_10: "10 Character Short URL",
+            emoji: "Emoji URL"
+        };
+
+        for(let item in applicableItems) {
+            let node = document.createElement("option");
+            node.selected = data.user.generator === item;
+            node.innerText = applicableItems[item];
+            filenameGroup.appendChild(node);
+        }
+
         let userdata = data.user;
         getDomains().then(data => {
             let publicDomainOptGroup = $("#publicDomainOptGroup")[0];
@@ -61,7 +79,7 @@ function loadData() {
 
 }
 
-async function saveUserSettingsFetch(subdomain, domain) {
+async function saveUserSettingsFetch(subdomain, domain, generator) {
     let headers = {
         Authorization: localStorage.getItem("token")
     };
@@ -70,7 +88,8 @@ async function saveUserSettingsFetch(subdomain, domain) {
         headers: headers,
         body: JSON.stringify({
             "domain": domain,
-            "subdomain": subdomain
+            "subdomain": subdomain,
+            "generator": generator
         })});
 
     return req.json();
@@ -78,16 +97,16 @@ async function saveUserSettingsFetch(subdomain, domain) {
 
 function saveUserSettings() {
     let form = document.forms["userSettings"];
-    saveUserSettingsFetch(form.subdomain.value, form.domain.value).then(data => {
+    saveUserSettingsFetch(form.subdomain.value, form.domain.value, form.filename.value).then(data => {
         if (data.success) {
             let success = $("#successMsgLoc")[0];
-            success.innerText = "Successfully set Domain Settings";
+            success.innerText = "Successfully set User Settings";
             success.hidden = false;
             $("#errorMsgLoc")[0].hidden = true;
             $("#scroll-to-top")[0].click();
         } else {
             let failure = $("#errorMsgLoc")[0];
-            failure.innerText = "Failed to save Domain Settings";
+            failure.innerText = "Failed to save User Settings";
             failure.hidden = false;
             $("#successMsgLoc")[0].hidden = true;
             $("#scroll-to-top")[0].click();
