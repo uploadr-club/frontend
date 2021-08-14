@@ -50,6 +50,7 @@ function loadData() {
             let node = document.createElement("option");
             node.selected = data.user.generator === item;
             node.innerText = applicableItems[item];
+            node.value = item;
             filenameGroup.appendChild(node);
         }
 
