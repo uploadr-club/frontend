@@ -66,8 +66,7 @@ function loadData() {
       // noinspection JSUnresolvedVariable
       if (!jQuery.isEmptyObject(data.discord)) {
         let elem = $("#dLinkButton")[0];
-        elem.innerText = "Discord already linked";
-        elem.disabled = true;
+        elem.innerText = "Relink Discord";
         // noinspection JSUnresolvedVariable
         // $("#usernameDropDown")[0].innerHTML = `<img style="border-radius: 50%;" alt="Profile Picture" width="45" src="https://cdn.discordapp.com/avatars/${data.discord.discord_data.user.id}/${data.discord.discord_data.user.avatar}.png?size=256">  ${data.user.username}`;
       } else {
