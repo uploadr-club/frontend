@@ -25,12 +25,12 @@ async function validateLogin() {
     login(form["username"].value, form["password"].value, form["totpInput"].value).then(req => {
         req.json().then(data => {
             if (!req.ok) {
-                let errorMsg = $("#formHandler")[0].children[2];
+                let errorMsg = $("#formHandler")[0].children[3];
                 errorMsg.hidden = false;
                 errorMsg.innerText = data.error.description;
                 return false;
             } else {
-                let errorMsg = $("#formHandler")[0].children[2];
+                let errorMsg = $("#formHandler")[0].children[3];
                 errorMsg.hidden = true;
             }
             localStorage.setItem("token", data.token);
