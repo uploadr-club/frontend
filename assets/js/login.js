@@ -1,11 +1,15 @@
 // noinspection JSUnresolvedVariable
 
-async function login(username, password) {
+async function login(username, password, totp = "") {
+    if (totp === "") {
+        totp = null;
+    }
     let req = await fetch("https://api.uploadr.club/api/v1/session/create",  {
         method: "POST",
         body: JSON.stringify({
             "username": username,
-            "password": password
+            "password": password,
+            "totp_verification": totp,
         })})
 
     if (!req.ok) {
@@ -18,7 +22,7 @@ async function login(username, password) {
 
 async function validateLogin() {
     let form = document.forms["loginForm"];
-    login(form["username"].value, form["password"].value).then(req => {
+    login(form["username"].value, form["password"].value, form["totpInput"].value).then(req => {
         req.json().then(data => {
             if (!req.ok) {
                 let errorMsg = $("#formHandler")[0].children[2];
