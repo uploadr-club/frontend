@@ -62,7 +62,7 @@ window.addEventListener("load", (() => {
   })(jQuery);
 
 function reqHandler() {
-  let req = fetch("https://api.uploadr.club/api/v1/session/check", {
+  let req = fetch("https://api.uploadr.cloud/api/v1/session/check", {
     method: "POST",
     body: JSON.stringify({
       token: localStorage.getItem("token"),
@@ -190,7 +190,7 @@ async function getUserData() {
   let headers = {
     Authorization: localStorage.getItem("token"),
   };
-  let req = await fetch("https://api.uploadr.club/api/v1/user/data", {
+  let req = await fetch("https://api.uploadr.cloud/api/v1/user/data", {
     headers: headers,
   });
   return req.json();
