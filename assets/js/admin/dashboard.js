@@ -2,7 +2,7 @@ async function getUserData() {
   let headers = {
     Authorization: localStorage.getItem("token"),
   };
-  let req = await fetch("https://api.uploadr.club/api/v1/user/data", {
+  let req = await fetch("https://api.uploadr.cloud/api/v1/user/data", {
     headers: headers,
   });
   return req.json();
@@ -12,7 +12,7 @@ async function getDomainCount() {
   let headers = {
     Authorization: localStorage.getItem("token"),
   };
-  let req = await fetch("https://api.uploadr.club/api/v1/admin/domains/count", {
+  let req = await fetch("https://api.uploadr.cloud/api/v1/admin/domains/count", {
     headers: headers,
   });
   return req.json();
@@ -22,7 +22,7 @@ async function getFileCount() {
   let headers = {
     Authorization: localStorage.getItem("token"),
   };
-  let req = await fetch("https://api.uploadr.club/api/v1/admin/files/count", {
+  let req = await fetch("https://api.uploadr.cloud/api/v1/admin/files/count", {
     headers: headers,
   });
   return req.json();
