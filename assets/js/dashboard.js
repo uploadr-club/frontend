@@ -2,25 +2,25 @@ async function getUserData() {
   headers = {
     Authorization: localStorage.getItem("token"),
   };
-  let req = await fetch("https://api.uploadr.club/api/v1/user/data", {
+  let req = await fetch("https://api.uploadr.cloud/api/v1/user/data", {
     headers: headers,
   });
   return req.json();
 }
 
 async function getMOTD() {
-  let req = await fetch("https://api.uploadr.club/api/v1/motd");
+  let req = await fetch("https://api.uploadr.cloud/api/v1/motd");
   return req.json();
 }
 
 async function getVersion() {
-  let req = await fetch("https://api.uploadr.club/api/v1/version");
+  let req = await fetch("https://api.uploadr.cloud/api/v1/version");
   return req.json();
 }
 
 async function getGlobalFileViews() {
   let req = await fetch(
-    "https://api.uploadr.club/api/v1/get_global_view_count"
+    "https://api.uploadr.cloud/api/v1/get_global_view_count"
   );
   return req.json();
 }
@@ -29,7 +29,7 @@ async function getUploadedFiles(page) {
   let headers = {
     Authorization: localStorage.getItem("token"),
   };
-  let req = await fetch("https://api.uploadr.club/api/v1/user/files", {
+  let req = await fetch("https://api.uploadr.cloud/api/v1/user/files", {
     headers: headers,
     body: JSON.stringify({
       page: page,
