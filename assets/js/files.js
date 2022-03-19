@@ -55,7 +55,7 @@ async function getUploadedFiles(page) {
   let headers = {
     Authorization: localStorage.getItem("token"),
   };
-  let req = await fetch("https://api.uploadr.club/api/v1/user/files", {
+  let req = await fetch("https://api.uploadr.cloud/api/v1/user/files", {
     headers: headers,
     body: JSON.stringify({
       page: page,
@@ -136,7 +136,7 @@ function loadFiles() {
       tableD4Btn2.onclick = () => {
         const elm = $(`#${img.id}`);
         elm.prop("disabled", true);
-        fetch("https://api.uploadr.club/api/v1/user/file", {
+        fetch("https://api.uploadr.cloud/api/v1/user/file", {
           body: JSON.stringify({
             file_id: img.id,
             host: img.full_domain,
