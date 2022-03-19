@@ -4,7 +4,7 @@ async function login(username, password, totp = "") {
     if (totp === "") {
         totp = null;
     }
-    let req = await fetch("https://api.uploadr.club/api/v1/session/create",  {
+    let req = await fetch("https://api.uploadr.cloud/api/v1/session/create",  {
         method: "POST",
         body: JSON.stringify({
             "username": username,
