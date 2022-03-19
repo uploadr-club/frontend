@@ -4,7 +4,7 @@ async function getUserData() {
     let headers = {
         Authorization: localStorage.getItem("token")
     }
-    let req = await fetch("https://api.uploadr.club/api/v1/user/data",  {
+    let req = await fetch("https://api.uploadr.cloud/api/v1/user/data",  {
         "headers": headers
     })
     return req.json()
@@ -14,7 +14,7 @@ async function getDomains() {
     let headers = {
         Authorization: localStorage.getItem("token")
     }
-    let req = await fetch("https://api.uploadr.club/api/v1/domains",  {
+    let req = await fetch("https://api.uploadr.cloud/api/v1/domains",  {
         "headers": headers
     })
     return req.json()
@@ -74,7 +74,7 @@ function loadData() {
             }
         });
         $("#sxcu_button")[0].onclick = () => {
-            window.open(`https://api.uploadr.club/api/v1/download/sxcu?api_key=${data.user.api_token}&embed=no`)
+            window.open(`https://api.uploadr.cloud/api/v1/download/sxcu?api_key=${data.user.api_token}&embed=no`)
         }
     });
 
@@ -84,7 +84,7 @@ async function saveUserSettingsFetch(subdomain, domain, generator) {
     let headers = {
         Authorization: localStorage.getItem("token")
     };
-    let req = await fetch("https://api.uploadr.club/api/v1/user/set_domain",{
+    let req = await fetch("https://api.uploadr.cloud/api/v1/user/set_domain",{
         method: "POST",
         headers: headers,
         body: JSON.stringify({
@@ -121,7 +121,7 @@ async function saveDiscordSettingsFetch(webhook_url, embedTitle, authorName, aut
         Authorization: localStorage.getItem("token")
     };
     // noinspection SpellCheckingInspection
-    let req = await fetch("https://api.uploadr.club/api/v1/user/discord_settings", {
+    let req = await fetch("https://api.uploadr.cloud/api/v1/user/discord_settings", {
         method: "POST",
         headers: headers,
         body: JSON.stringify({
@@ -174,7 +174,7 @@ async function revokeSessionsFetch() {
     let headers = {
         Authorization: localStorage.getItem("token")
     };
-    let req = await fetch("https://api.uploadr.club/api/v1/session/delete", {
+    let req = await fetch("https://api.uploadr.cloud/api/v1/session/delete", {
         method: "POST",
         headers: headers,
         body: JSON.stringify({
@@ -199,7 +199,7 @@ async function changePasswordFetch(password) {
     let headers = {
         Authorization: localStorage.getItem("token")
     };
-    let req = await fetch("https://api.uploadr.club/api/v1/user/change_password", {
+    let req = await fetch("https://api.uploadr.cloud/api/v1/user/change_password", {
         method: "POST",
         headers: headers,
         body: JSON.stringify({
@@ -229,7 +229,7 @@ async function resetTokenFetch() {
     let headers = {
         Authorization: localStorage.getItem("token")
     };
-    let req = await fetch("https://api.uploadr.club/api/v1/user/reset_token", {
+    let req = await fetch("https://api.uploadr.cloud/api/v1/user/reset_token", {
         method: "POST",
         headers: headers,
     });
