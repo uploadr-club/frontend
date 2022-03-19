@@ -1,7 +1,7 @@
 // noinspection JSUnresolvedVariable,DuplicatedCode
 
 async function register(username, password) {
-    let req = await fetch("https://api.uploadr.club/api/v1/user/create",  {
+    let req = await fetch("https://api.uploadr.cloud/api/v1/user/create",  {
         method: "POST",
         body: JSON.stringify({
             "username": username,
