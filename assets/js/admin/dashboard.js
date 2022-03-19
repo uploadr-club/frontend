@@ -12,9 +12,12 @@ async function getDomainCount() {
   let headers = {
     Authorization: localStorage.getItem("token"),
   };
-  let req = await fetch("https://api.uploadr.cloud/api/v1/admin/domains/count", {
-    headers: headers,
-  });
+  let req = await fetch(
+    "https://api.uploadr.cloud/api/v1/admin/domains/count",
+    {
+      headers: headers,
+    }
+  );
   return req.json();
 }
 
