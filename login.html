@@ -1,58 +1,127 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+    />
     <title>Login - Uploadr.club</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css?h=ed0f9fbe99ee9c4c4c6250bf0ab5396c">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="assets/fonts/fontawesome5-overrides.min.css?h=a436bee1e5ae414f98db7ca13adfd7c0">
-    <link rel="stylesheet" href="assets/css/styles.min.css?h=bb2db7521508fc7db3f11e7c02094a4a">
+    <link
+      rel="stylesheet"
+      href="assets/bootstrap/css/bootstrap.min.css?h=ed0f9fbe99ee9c4c4c6250bf0ab5396c"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.12.0/css/all.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/fonts/fontawesome5-overrides.min.css?h=a436bee1e5ae414f98db7ca13adfd7c0"
+    />
+    <link
+      rel="stylesheet"
+      href="assets/css/styles.min.css?h=bb2db7521508fc7db3f11e7c02094a4a"
+    />
     <script src="./assets/js/login.js"></script>
-</head>
+  </head>
 
-<body class="bg-gradient-primary">
+  <body class="bg-gradient-primary">
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-9 col-lg-12 col-xl-10">
-                <div class="card shadow-lg o-hidden border-0 my-5">
-                    <div class="card-body p-0">
-                        <div class="row">
-                            <div class="col-lg-6 d-none d-lg-flex" style="background: var(--indigo);"><img src="assets/img/logos/uploadr-logo-goyim.svg?h=b25cab0586ef382b73e5de4bc929da58" style="width: 400px;" alt="uploadr.club logo"></div>
-                            <div class="col-lg-6" style="background: var(--indigo);">
-                                <div class="p-5">
-                                    <div class="text-center">
-                                        <h4 style="color: white;" class="mb-4">Welcome Back!</h4>
-                                    </div>
-                                    <form name="loginForm" id="formHandler" class="user" onsubmit="return false">
-                                        <div class="form-group"><label for="usernameInput">Username</label><input class="form-control form-control-user" type="text" id="usernameInput"
-                                                                                                                  aria-describedby="usernameHelp" placeholder="Enter Username..." name="username"></div>
-                                        <div class="form-group"><label for="passwordInput">Password</label><input class="form-control form-control-user" type="password" id="passwordInput"
-                                                                                                                  placeholder="Password" name="password"></div>
-                                        <div class="form-group"><label for="totpInput">2FA</label><input class="form-control form-control-user" type="number" id="totpInput"
-                                                                                                                  placeholder="2FA Code (if used)" name="totpInput"></div>
-                                        <p hidden style="color: red;">{{ errorTemplate }}</p>
-                                        <p style="color: #1cc88a;"><a style="color: #1cc88a;" href="/register.html">Don't have an account yet? Click HERE to Register!</a></p>
-                                        <div class="form-group">
-                                            <div class="custom-control custom-checkbox small"></div>
-                                        </div><button class="btn btn-primary btn-block text-white btn-user" type="submit" onclick="validateLogin()">Login</button>
-                                        <hr>
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+      <div class="row justify-content-center">
+        <div class="col-md-9 col-lg-12 col-xl-10">
+          <div class="card shadow-lg o-hidden border-0 my-5">
+            <div class="card-body p-0">
+              <div class="row">
+                <div
+                  class="col-lg-6 d-none d-lg-flex"
+                  style="background: var(--indigo)"
+                >
+                  <img
+                    src="assets/img/logos/uploadr-logo-goyim.svg?h=b25cab0586ef382b73e5de4bc929da58"
+                    style="width: 400px"
+                    alt="uploadr.club logo"
+                  />
                 </div>
+                <div class="col-lg-6" style="background: var(--indigo)">
+                  <div class="p-5">
+                    <div class="text-center">
+                      <h4 style="color: white" class="mb-4">Welcome Back!</h4>
+                    </div>
+                    <form
+                      name="loginForm"
+                      id="formHandler"
+                      class="user"
+                      onsubmit="return false"
+                    >
+                      <div class="form-group">
+                        <label for="usernameInput">Username</label
+                        ><input
+                          class="form-control form-control-user"
+                          type="text"
+                          id="usernameInput"
+                          aria-describedby="usernameHelp"
+                          placeholder="Enter Username..."
+                          name="username"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="passwordInput">Password</label
+                        ><input
+                          class="form-control form-control-user"
+                          type="password"
+                          id="passwordInput"
+                          placeholder="Password"
+                          name="password"
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="totpInput">2FA</label
+                        ><input
+                          class="form-control form-control-user"
+                          type="number"
+                          id="totpInput"
+                          placeholder="2FA Code (if used)"
+                          name="totpInput"
+                        />
+                      </div>
+                      <p hidden style="color: red">{{ errorTemplate }}</p>
+                      <p style="color: #1cc88a">
+                        <a style="color: #1cc88a" href="/register.html"
+                          >Don't have an account yet? Click HERE to Register!</a
+                        >
+                      </p>
+                      <div class="form-group">
+                        <div class="custom-control custom-checkbox small"></div>
+                      </div>
+                      <button
+                        class="btn btn-primary btn-block text-white btn-user"
+                        type="submit"
+                        onclick="validateLogin()"
+                      >
+                        Login
+                      </button>
+                      <hr />
+                    </form>
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
+      </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets/js/script.js?h=1e4be2044492a6ec5dc404d03b20a15b"></script>
-</body>
-
+  </body>
 </html>

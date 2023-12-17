@@ -20,7 +20,7 @@ async function getVersion() {
 
 async function getGlobalFileViews() {
   let req = await fetch(
-    "https://api.uploadr.cloud/api/v1/get_global_view_count"
+    "https://api.uploadr.cloud/api/v1/get_global_view_count",
   );
   return req.json();
 }
@@ -39,7 +39,6 @@ async function getUploadedFiles(page) {
   return req.json();
 }
 
-
 function loadData() {
   getUserData().then((data) => {
     if (data.error) {
@@ -50,7 +49,7 @@ function loadData() {
       let psUsed = Math.round(
         (data.ufs.bytes_used /
           (data.ufs.bytes_available + data.ufs.bytes_used)) *
-          100
+          100,
       );
       // noinspection JSUnresolvedVariable
       $("#storage_counter")[0].innerText = `${psUsed}%`;
@@ -60,9 +59,8 @@ function loadData() {
       sb[0].setAttribute("aria-valuenow", String(psUsed));
       sb.css("width", `${psUsed}%`);
       // noinspection JSUnresolvedVariable
-      $(
-        "#userinfo"
-      )[0].innerText = `UUID: ${data.user.uuid}\nFile Limit Enabled: ${data.ufs.enabled}`;
+      $("#userinfo")[0].innerText =
+        `UUID: ${data.user.uuid}\nFile Limit Enabled: ${data.ufs.enabled}`;
       // noinspection JSUnresolvedVariable
       if (!jQuery.isEmptyObject(data.discord)) {
         let elem = $("#dLinkButton")[0];
@@ -112,7 +110,7 @@ function loadData() {
       while (a_box.firstChild) {
         a_box.removeChild(a_box.firstChild);
       }
-      data.forEach(item => {
+      data.forEach((item) => {
         let node = document.createElement("li");
         node.classList.add("activity-item", "list-group-item");
         let innerNode = document.createElement("div");
