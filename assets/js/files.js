@@ -44,7 +44,7 @@ $("#delete-all").on("click", function () {
         } else {
           alert("Deletion failed.");
         }
-      }
+      },
     );
   } else {
     // Do nothing uwu
@@ -196,7 +196,7 @@ loadFiles();
 $(".preview").on("click", function () {
   $("#preview-img").attr(
     "src",
-    "https://gitlab.has-bad.tech/3uuMk0J8A5rrUA.gif"
+    "https://gitlab.has-bad.tech/3uuMk0J8A5rrUA.gif",
   );
   let imgurl = $(this).data("img");
   $("#preview-img").attr("src", imgurl);
